@@ -4,32 +4,54 @@ This repository contains the website for the School of Conscious Communication. 
 
 Origin: This project was initially scaffolded using lovable.dev. The site and repository have been adapted and are maintained locally from this codebase.
 
-## Local development
+## Local Development Setup
 
-To run and edit this project locally, follow these steps. This guide assumes you have Git installed and are comfortable using a terminal.
+This guide walks you through setting up and running the School of Conscious Communication website on your local machine. Works on Windows, Mac, and Linux.
 
-1. Clone the repository using your Git URL:
+### Prerequisites
+
+Install [Node.js](https://nodejs.org/) (v16 or higher). This includes npm, which is all you need.
+
+### Getting Started
+
+1. **Clone the repository:**
 
 ```sh
 git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
+cd School-of-Conscious-Communication
 ```
 
-2. Install dependencies. This project was created with Bun; if you have Bun installed, run:
+2. **Install dependencies:**
 
 ```sh
-bun install
+npm install
 ```
 
-If you do not use Bun, you can generally use a compatible Node.js setup and run `npm install` or `pnpm install` instead (adjust commands as needed).
-
-3. Start the development server with hot-reloading:
+3. **Start the development server:**
 
 ```sh
-bun run dev
+npm run build
+npm run preview
 ```
 
-The dev server command runs the Vite development server. Open the address printed in the terminal (usually `http://localhost:8080`) to view the site.
+4. **Open in your browser:**
+
+The terminal will print a local URL (typically `http://localhost:5173`). Open this address in your browser. The site auto-reloads when you save changes.
+
+### Building for Production
+
+```sh
+npm run build
+```
+
+This generates a `dist/` folder with the compiled static files ready for deployment.
+
+### Available Commands
+
+- `npm run dev` — Start development server
+- `npm run build` — Create production build
+- `npm run preview` — Preview production build locally
+- `npm run lint` — Run ESLint
 
 ## Editing the code
 
