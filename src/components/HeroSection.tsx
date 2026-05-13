@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import heroImage from '@/assets/hero-sacred-geometry.png';
 
 const GeometricShape = ({ className, delay = 0 }: { className?: string; delay?: number }) => (
   <div

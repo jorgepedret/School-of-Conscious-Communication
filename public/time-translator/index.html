@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Translator - School of Conscious Communication</title>
+    <meta name="description" content="A living calendar with 9 concentric wheels navigating dimensions of time. Created by Elijah Ignatieff.">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const TimeTranslator = () => {
+          const [now, setNow] = useState(new Date());
+          const [speedMultiplier, setSpeedMultiplier] = useState(1);
+          const [isPaused, setIsPaused] = useState(false);
+          
+          useEffect(() => {
+            if (isPaused) return;
+            
+            const timer = setInterval(() => {
+              setNow(prevNow => new Date(prevNow.getTime() + 1000 * speedMultiplier));
+            }, 1000);
+            return () => clearInterval(timer);
+          }, [speedMultiplier, isPaused]);
+
+          const getRotations = (date) => {
+            const seconds = date.getSeconds();
+            const minutes = date.getMinutes();
+            const hours = date.getHours();
+            const dayOfWeek = date.getDay();
+            const dayOfMonth = date.getDate();
+            const monthDay = ((dayOfMonth - 1) % 28);
+            const month = date.getMonth();
+            const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+            
+            return {
+              minute: (seconds / 60) * 360,
+              hour: (minutes / 60) * 360,
+              day: (hours / 24) * 360,
+              week: (dayOfWeek / 7) * 360,
+              month: (monthDay / 28) * 360,
+              season: (Math.floor(month / 3) / 4) * 360,
+              year: ((dayOfYear % 365) / 365) * 360
+            };
+          };
+
+          const rotations = getRotations(now);
+
+          const Ring = ({ radius, width, color, rotation, segments, label, showNumbers = true, isMinuteCycle = false, isWeekCycle = false, isSeasonCycle = false, isLifetimeCycle = false }) => {
+            const segmentAngle = 360 / segments;
+            
+            const dayColors = {
+              0: '#FDB813', // Sun
+              1: '#C0C0C0', // Mon
+              2: '#DC143C', // Tue
+              3: '#FF8C00', // Wed
+              4: '#4169E1', // Thu
+              5: '#FF69B4', // Fri
+              6: '#2F4F4F'  // Sat
+            };
+            
+            const seasonColors = ['#90EE90', '#FFD700', '#FF8C00', '#4682B4'];
+            
+            return (
+              <g transform={`rotate(${-rotation} 400 400)`}>
+                {isSeasonCycle && Array.from({ length: segments }).map((_, i) => {
+                  const startAngle = (i * segmentAngle - 90) * (Math.PI / 180);
+                  const endAngle = ((i + 1) * segmentAngle - 90) * (Math.PI / 180);
+                  const innerR = radius - width / 2;
+                  const outerR = radius + width / 2;
+                  
+                  const x1 = 400 + innerR * Math.cos(startAngle);
+                  const y1 = 400 + innerR * Math.sin(startAngle);
+                  const x2 = 400 + outerR * Math.cos(startAngle);
+                  const y2 = 400 + outerR * Math.sin(startAngle);
+                  const x3 = 400 + outerR * Math.cos(endAngle);
+                  const y3 = 400 + outerR * Math.sin(endAngle);
+                  const x4 = 400 + innerR * Math.cos(endAngle);
+                  const y4 = 400 + innerR * Math.sin(endAngle);
+                  
+                  const largeArc = segmentAngle > 180 ? 1 : 0;
+                  
+                  return (
+                    <path
+                      key={`season-${i}`}
+                      d={`M ${x1} ${y1} L ${x2} ${y2} A ${outerR} ${outerR} 0 ${largeArc} 1 ${x3} ${y3} L ${x4} ${y4} A ${innerR} ${innerR} 0 ${largeArc} 0 ${x1} ${y1}`}
+                      fill={seasonColors[i]}
+                      opacity="0.4"
+                    />
+                  );
+                })}
+                
+                <circle
+                  cx="400"
+                  cy="400"
+                  r={radius}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth={width}
+                  opacity="0.6"
+                />
+                
+                {Array.from({ length: segments }).map((_, i) => {
+                  const angle = (i * segmentAngle - 90) * (Math.PI / 180);
+                  const innerR = radius - width / 2;
+                  const outerR = radius + width / 2;
+                  const numR = radius;
+                  
+                  const x1 = 400 + innerR * Math.cos(angle);
+                  const y1 = 400 + innerR * Math.sin(angle);
+                  const x2 = 400 + outerR * Math.cos(angle);
+                  const y2 = 400 + outerR * Math.sin(angle);
+                  
+                  const numAngle = i * segmentAngle;
+                  const numX = 400 + numR * Math.cos((numAngle - 90) * Math.PI / 180);
+                  const numY = 400 + numR * Math.sin((numAngle - 90) * Math.PI / 180);
+                  
+                  if (isMinuteCycle) {
+                    if (i === 0) {
+                      return (
+                        <line
+                          key={i}
+                          x1={x1}
+                          y1={y1}
+                          x2={x2}
+                          y2={y2}
+                          stroke="white"
+                          strokeWidth="3"
+                          opacity="0.9"
+                        />
+                      );
+                    }
+                    return null;
+                  }
+                  
+                  if (isLifetimeCycle) {
+                    return null;
+                  }
+                  
+                  const lineColor = isWeekCycle ? dayColors[i] : color;
+                  
+                  return (
+                    <g key={i}>
+                      <line
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke={lineColor}
+                        strokeWidth={isWeekCycle ? "2" : "1"}
+                        opacity="0.5"
+                      />
+                      
+                      {showNumbers && (
+                        <text
+                          x={numX}
+                          y={numY}
+                          fill={isWeekCycle ? dayColors[i] : "white"}
+                          fontSize={width > 30 ? "10" : "8"}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          transform={`rotate(${numAngle} ${numX} ${numY})`}
+                          opacity="0.9"
+                          fontWeight={isWeekCycle ? "bold" : "normal"}
+                        >
+                          {segments === 7 ? ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][i] :
+                           segments === 4 ? ['Spring', 'Summer', 'Fall', 'Winter'][i] :
+                           segments === 13 ? (i + 1) :
+                           i}
+                        </text>
+                      )}
+                    </g>
+                  );
+                })}
+                
+                {(isMinuteCycle || isLifetimeCycle) && (
+                  <text
+                    x="400"
+                    y={radius + 15}
+                    fill="white"
+                    fontSize="10"
+                    textAnchor="middle"
+                    opacity="0.8"
+                  >
+                    {label}
+                  </text>
+                )}
+              </g>
+            );
+          };
+
+          return (
+            <div style={{
+              width: '100vw',
+              height: '100vh',
+              background: '#1a1a2e',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <h1 style={{
+                position: 'absolute',
+                top: '2rem',
+                color: 'white',
+                fontSize: '2rem',
+                fontWeight: 'bold',
+                letterSpacing: '0.1em',
+                zIndex: 10,
+                textTransform: 'uppercase'
+              }}>
+                Inflow Matrix: Time Translator
+              </h1>
+              <p style={{
+                position: 'absolute',
+                top: '4rem',
+                color: 'rgba(255,255,255,0.6)',
+                fontSize: '0.9rem',
+                zIndex: 10
+              }}>
+                Created by Elijah Ignatieff
+              </p>
+
+              <svg width="800" height="800" viewBox="0 0 800 800" style={{ position: 'relative', marginTop: '4rem' }}>
+                <defs>
+                  <radialGradient id="centerGrad">
+                    <stop offset="0%" stopColor="#ff0080" />
+                    <stop offset="50%" stopColor="#ff0040" />
+                    <stop offset="100%" stopColor="#000000" />
+                  </radialGradient>
+                </defs>
+                
+                <circle cx="400" cy="400" r="30" fill="url(#centerGrad)" />
+                <text x="400" y="400" fill="white" fontSize="24" textAnchor="middle" dominantBaseline="middle">∞</text>
+                
+                <circle cx="400" cy="400" r="50" fill="#ff6b9d" opacity="0.3" />
+                
+                <Ring radius={80} width={25} color="#ff8080" rotation={rotations.minute} segments={60} label="Minute Cycle" isMinuteCycle={true} />
+                <Ring radius={120} width={25} color="#ffaa00" rotation={rotations.hour} segments={60} label="Hour" />
+                <Ring radius={160} width={30} color="#ffdd00" rotation={rotations.day} segments={24} label="Day" />
+                <Ring radius={200} width={30} color="#88ff00" rotation={rotations.week} segments={7} label="Week" isWeekCycle={true} />
+                <Ring radius={240} width={30} color="#00ddff" rotation={rotations.month} segments={28} label="Month" />
+                <Ring radius={285} width={35} color="#4488ff" rotation={rotations.season} segments={4} label="Season" isSeasonCycle={true} />
+                <Ring radius={335} width={35} color="#8844ff" rotation={rotations.year} segments={13} label="Year" />
+                <Ring radius={385} width={30} color="#ff44ff" rotation={0} segments={365} label="Lifetime Cycle" isLifetimeCycle={true} showNumbers={false} />
+                
+                <line x1="400" y1="50" x2="400" y2="400" stroke="white" strokeWidth="2" opacity="0.8" />
+                <polygon points="400,35 392,50 408,50" fill="white" />
+              </svg>
+
+              <div style={{
+                position: 'absolute',
+                bottom: '2rem',
+                left: '2rem',
+                color: 'white',
+                background: 'rgba(0,0,0,0.7)',
+                padding: '1.5rem',
+                borderRadius: '10px',
+                maxWidth: '300px'
+              }}>
+                <div style={{ marginBottom: '1rem' }}>
+                  <button
+                    onClick={() => setIsPaused(!isPaused)}
+                    style={{
+                      padding: '0.5rem 1rem',
+                      background: '#667eea',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: 'pointer',
+                      width: '100%',
+                      marginBottom: '0.5rem'
+                    }}
+                  >
+                    {isPaused ? 'Resume' : 'Pause'}
+                  </button>
+                  
+                  <div>
+                    <label style={{ fontSize: '0.8rem', display: 'block', marginBottom: '0.3rem' }}>
+                      Speed: {speedMultiplier}x
+                    </label>
+                    <input
+                      type="range"
+                      min="1"
+                      max="3600"
+                      value={speedMultiplier}
+                      onChange={(e) => setSpeedMultiplier(Number(e.target.value))}
+                      style={{ width: '100%' }}
+                    />
+                  </div>
+                </div>
+                
+                <div style={{ fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.3)', paddingTop: '0.5rem' }}>
+                  <p>{now.toLocaleString()}</p>
+                  <p>Second: {now.getSeconds()}</p>
+                  <p>Minute: {now.getMinutes()}</p>
+                  <p>Hour: {now.getHours()}</p>
+                  <p>Day: {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][now.getDay()]}</p>
+                </div>
+              </div>
+              
+              <div style={{
+                position: 'absolute',
+                bottom: '2rem',
+                right: '2rem',
+                color: 'rgba(255,255,255,0.6)',
+                fontSize: '0.75rem',
+                textAlign: 'right'
+              }}>
+                <p>School of Conscious Communication</p>
+                <a href="https://school-of-conscious-communication.github.io" 
+                   style={{ color: '#667eea', textDecoration: 'none' }}
+                   target="_blank">
+                  Visit Website
+                </a>
+              </div>
+            </div>
+          );
+        };
+
+        ReactDOM.render(<TimeTranslator />, document.getElementById('root'));
+    </script>
+</body>
+</html>
