@@ -38,7 +38,7 @@ const ContactSection = () => {
         setIsSubmitted(true);
         toast({
           title: "Message sent!",
-          description: "I'll get back to you within 24 hours.",
+          description: "We'll get back to you within 24 hours.",
         });
       } else {
         throw new Error(`Failed to submit form (${response.status})`);
