@@ -20,24 +20,20 @@ const SubscribeSection = () => {
     setIsSubmitting(true);
 
     try {
-      const form = e.currentTarget;
-      const formData = new FormData(form);
+      const formData = new FormData(e.currentTarget);
 
-      const response = await fetch("/", {
+      const response = await fetch("https://formspree.io/f/xwvyzboq", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formData,
       });
 
-      if (response.ok || response.status === 303) {
-        // 303 is expected redirect after form submission
+      if (response.ok) {
         setIsSubmitted(true);
         toast({
           title: "Subscribed!",
           description: "You've been added to our mailing list.",
         });
       } else {
-        console.error("Form submission response:", response.status);
         throw new Error(`Failed to subscribe (${response.status})`);
       }
     } catch (error) {
@@ -78,20 +74,8 @@ const SubscribeSection = () => {
         <div className="max-w-md mx-auto opacity-0 animate-fade-in">
           <form
             onSubmit={handleSubmit}
-            name="subscribe"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             className="relative"
           >
-            <input type="hidden" name="form-name" value="subscribe" />
-            <input type="hidden" name="form-subject" value="Subscribed" />
-
-            <p className="hidden">
-              <label>
-                Don't fill this out: <input name="bot-field" />
-              </label>
-            </p>
             
             <div className="relative group">
               <input

@@ -26,25 +26,20 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const form = e.currentTarget;
-      const formData = new FormData(form);
+      const formData = new FormData(e.currentTarget);
 
-      // Submit to Netlify function endpoint
-      const response = await fetch("/", {
+      const response = await fetch("https://formspree.io/f/mrejdkaa", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formData,
       });
 
-      if (response.ok || response.status === 303) {
-        // 303 is expected redirect after form submission
+      if (response.ok) {
         setIsSubmitted(true);
         toast({
           title: "Message sent!",
           description: "I'll get back to you within 24 hours.",
         });
       } else {
-        console.error("Form submission response:", response.status);
         throw new Error(`Failed to submit form (${response.status})`);
       }
     } catch (error) {
@@ -86,20 +81,8 @@ const ContactSection = () => {
         <div className="max-w-lg mx-auto opacity-0 animate-fade-in">
           <form
             onSubmit={handleSubmit}
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             className="space-y-6"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="form-subject" value="Message Received" />
-
-            <p className="hidden">
-              <label>
-                Don't fill this out: <input name="bot-field" />
-              </label>
-            </p>
             
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">

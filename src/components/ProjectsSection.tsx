@@ -5,19 +5,19 @@ const projects = [
   {
     title: 'Time Translator',
     description: 'A tool designed to help translate time across different contexts and frameworks, enabling clearer understanding of temporal concepts in communication.',
-    link: 'https://school-of-conscious-communication.github.io/time-translator/',
+    link: '/time-translator/',
     color: 'violet' as const,
   },
   {
     title: 'Card Decks',
     description: 'Interactive card-based tools for reflection, learning, and facilitating meaningful conversations about consciousness and communication.',
-    link: 'https://school-of-conscious-communication.github.io/card-renderer/',
+    link: '/card-renderer/',
     color: 'teal' as const,
   },
   {
     title: 'Inflow Matrix',
     description: 'Explore the interconnected patterns of information flow and how they shape our understanding and interactions with others.',
-    link: '#',
+    link: 'https://www.youtube.com/results?search_query=what+is+the+inflow+matrix',
     color: 'indigo' as const,
   },
   {

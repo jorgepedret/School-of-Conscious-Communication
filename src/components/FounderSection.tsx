@@ -32,10 +32,10 @@ const FounderSection = () => {
             that help people engage more meaningfully with themselves and others.
           </p>
           <p className='text-muted-foreground leading-relaxed mb-8'>
-            He built the "Inflow Matrix"—a gameworld of maps, cards, and systems designed to help humanity navigate consciousness and communication.
+            He built the <strong>Inflow Matrix</strong>, a gameworld of maps, cards, and systems designed to support humanity navigate consciousness and communication.
           </p>
           <p className='text-muted-foreground leading-relaxed mb-8'>
-            Elijah passed in 2023, leaving behind a rich legacy of tools that continue to evolve through the communities he touched. His work lives on through those who carry it forward.
+            Elijah passed in February 2023, leaving behind a rich legacy of tools that continue to evolve through the communities he touched. His work lives on through those who carry it forward.
           </p>
           <p className='text-muted-foreground leading-relaxed mb-8'>
             More about Elijah's journey and teachings coming soon...
