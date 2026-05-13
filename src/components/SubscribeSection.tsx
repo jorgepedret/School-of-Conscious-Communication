@@ -20,11 +20,12 @@ const SubscribeSection = () => {
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData(e.currentTarget);
-
       const response = await fetch("https://formspree.io/f/xwvyzboq", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
       });
 
       if (response.ok) {

@@ -26,11 +26,12 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData(e.currentTarget);
-
       const response = await fetch("https://formspree.io/f/mrejdkaa", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
