@@ -6,52 +6,101 @@ Origin: This project was initially scaffolded using lovable.dev. The site and re
 
 ## Local Development Setup
 
-This guide walks you through setting up and running the School of Conscious Communication website on your local machine. Works on Windows, Mac, and Linux.
+This guide walks you through setting up and running the School of Conscious Communication website on your local machine.
 
 ### Prerequisites
 
-Install [Node.js](https://nodejs.org/) (v16 or higher). This includes npm, which is all you need.
+You need **Node.js v18 or higher** and a package manager. Choose one:
+- **npm** (comes with Node.js) — recommended for all platforms
+- **Bun** (optional, faster) — our primary package manager
+
+**Install Node.js:**
+- **macOS**: Download from [nodejs.org](https://nodejs.org/) or use Homebrew: `brew install node`
+- **Windows**: Download from [nodejs.org](https://nodejs.org/) or use Chocolatey: `choco install nodejs`
+- **Linux**: Use your package manager:
+  - Ubuntu/Debian: `sudo apt-get install nodejs npm`
+  - Fedora: `sudo dnf install nodejs npm`
+  - Arch: `sudo pacman -S nodejs npm`
+
+**Optional: Install Bun** (for faster installs)
+- **macOS/Linux**: `curl -fsSL https://bun.sh/install | bash`
+- **Windows**: `powershell -c "irm bun.sh/install.ps1 | iex"`
 
 ### Getting Started
 
-1. **Clone the repository:**
+#### 1. Clone the repository
 
+**macOS/Linux:**
 ```sh
 git clone <YOUR_GIT_URL>
 cd School-of-Conscious-Communication
 ```
 
-2. **Install dependencies:**
+**Windows (Command Prompt):**
+```cmd
+git clone <YOUR_GIT_URL>
+cd School-of-Conscious-Communication
+```
 
+**Windows (PowerShell):**
+```powershell
+git clone <YOUR_GIT_URL>
+cd School-of-Conscious-Communication
+```
+
+#### 2. Install dependencies
+
+Choose your package manager:
+
+**Using npm (all platforms):**
 ```sh
 npm install
 ```
 
-3. **Start the development server:**
-
+**Using Bun (macOS/Linux):**
 ```sh
-npm run build
-npm run preview
+bun install
 ```
 
-4. **Open in your browser:**
+**Using Bun (Windows):**
+```powershell
+bun install
+```
 
-The terminal will print a local URL (typically `http://localhost:5173`). Open this address in your browser. The site auto-reloads when you save changes.
+#### 3. Start the development server
+
+**Using npm:**
+```sh
+npm run dev
+```
+
+**Using Bun:**
+```sh
+bun run dev
+```
+
+The terminal will display a local URL (typically `http://localhost:5173`). Open this in your browser. The site auto-reloads when you save changes.
 
 ### Building for Production
 
+**Using npm:**
 ```sh
 npm run build
 ```
 
-This generates a `dist/` folder with the compiled static files ready for deployment.
+**Using Bun:**
+```sh
+bun run build
+```
+
+This generates a `dist/` folder with compiled static files ready for deployment.
 
 ### Available Commands
 
-- `npm run dev` — Start development server
-- `npm run build` — Create production build
-- `npm run preview` — Preview production build locally
-- `npm run lint` — Run ESLint
+- `npm run dev` or `bun run dev` — Start development server
+- `npm run build` or `bun run build` — Create production build
+- `npm run preview` or `bun run preview` — Preview production build locally
+- `npm run lint` or `bun run lint` — Run ESLint
 
 ## Editing the code
 
