@@ -669,11 +669,18 @@
                 typeSelect.appendChild(opt);
             });
 
-            typeSelect.value = types.includes(previousValue) ? previousValue : '';
-            // Only worth showing when there's an actual choice to make --
-            // several sets currently just repeat their own set name as the
-            // sub-set for every card, which isn't a useful filter.
-            typeGroup.style.display = types.length > 1 ? 'flex' : 'none';
+            // Only show when a specific Set is selected and that set actually
+            // has more than one distinct sub-set value -- with "All Sets"
+            // selected, or a set that just repeats its own name as the
+            // sub-set for every card (currently everything but Conversation),
+            // there's no useful choice to make.
+            if (setFilter && types.length > 1) {
+                typeSelect.value = types.includes(previousValue) ? previousValue : '';
+                typeGroup.style.display = 'flex';
+            } else {
+                typeSelect.value = '';
+                typeGroup.style.display = 'none';
+            }
         }
 
         function onSetFilterChange() {
