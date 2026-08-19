@@ -1624,5 +1624,157 @@ window.INFLOW_CARDS = [
                 set: "Flow",
                 type: "Flow Lens",
                 color: "pink"
+            },
+            {
+                id: "",
+                title: "HEALING",
+                description: "To hold space so that the people in the conversation can express their pain.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "FOCUSING",
+                description: "To assist people(s) to focus on what needs attention to complete a goal.",
+                set: "Conversation",
+                type: "Stewardship Conversation",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "APPRECIATION",
+                description: "To recognize the quality, value, and significance of someone or something.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "SYNERGIZING",
+                description: "To learn how to share the same contexts so that a synergy exists between all parts.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "REFORMAT",
+                description: "To change the direction in the design to adapt to the circumstances.",
+                set: "Conversation",
+                type: "Creativity Conversation",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "NEEDS ANALYSIS",
+                description: "To identify what the needs are of each party before they reach an agreement.",
+                set: "Conversation",
+                type: "Marketing Conversation",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "DIRECTING",
+                description: "To tell people what and how to do a specific task in the moment.",
+                set: "Conversation",
+                type: "Stewardship Conversation",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "FIRST CONTACT",
+                description: "To establish contact with someone new and to qualify the potential relationship.",
+                set: "Conversation",
+                type: "Marketing Conversation",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "WELCOMING",
+                description: "To welcome each other when paths are joined temporarily in time.",
+                set: "Conversation",
+                type: "Services Conversation",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "SYNCHRONIZING",
+                description: "To discover how to coordinate time schedules so you are in synch with each other.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "REMEDY",
+                description: "To find the best solution that helps the most people.",
+                set: "Conversation",
+                type: "Services Conversation",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "PRESENTATION",
+                description: "To present a product solution that solves a particular problem.",
+                set: "Conversation",
+                type: "Marketing Conversation",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "MEDIATING",
+                description: "To assist people who have a dispute to come to terms that works for all.",
+                set: "Conversation",
+                type: "Stewardship Conversation",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "GIFTING",
+                description: "To give something at no cost or obligation so they can try it out for themselves.",
+                set: "Conversation",
+                type: "Marketing Conversation",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "GRIEVING",
+                description: "To mourn the loss of something or someone that was meaningful.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "MONITORING",
+                description: "To make sure that everything is ok with the services someone is receiving.",
+                set: "Conversation",
+                type: "Services Conversation",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "COMPLAINT",
+                description: "To express dissatisfaction with the service or product that has been received.",
+                set: "Conversation",
+                type: "Services Conversation",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "CONFLICT RESOLUTION",
+                description: "To work towards a state of harmony between incompatible perspectives.",
+                set: "Conversation",
+                type: "Synergy Conversation",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "FAREWELL",
+                description: "To acknowledge the temporary separation of paths.",
+                set: "Conversation",
+                type: "Services Conversation",
+                color: "orange"
             }
         ];

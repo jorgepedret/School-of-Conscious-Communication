@@ -1,7 +1,10 @@
 - [ ] Import the rest of the cards
-    last import was 41 Flow Lens cards (2026-08-19, via Canva download + image transcription)
+    last import was 19 Conversation cards (2026-08-19, via Canva download + image transcription)
     Harmony Lens set is now complete (30/30, matches README count)
     Synergy Lens set is now complete (31/31, matches README count)
-    Flow Lens set now has 42 cards cataloged (41 new + 1 pre-existing CYCLES; README lists no specific target count for this set, so treating as complete based on the 44-item Canva folder)
-    still missing: rest of Conversation (~14), Value Lens (~114), Choice Lens (~52)
+    Flow Lens set has 42 cards cataloged (README lists no specific target count for this set; treated as complete based on the 44-item Canva folder)
+    Conversation set now has 78 cards cataloged (59 pre-existing + 19 new), matching all 73 unique titles in the Canva "Conversation Types" folder (the 73 files include one true duplicate: two differently-ID'd "C-Welcoming3.7.png" files with identical text/design, counted once)
+    still missing: Value Lens (~114), Choice Lens (~52)
     rest of the cards are in canva
+
+    KNOWN ISSUE (2026-08-19): the 73 Conversation Types card IMAGES were clicked through Canva's download flow this session, but none of them actually saved to /Users/office/Downloads on the Mac (verified — folder listing unchanged before/after, and a direct file-existence check for a couple of the expected filenames came back "does not exist"). This is different from the Harmony/Synergy/Flow Wheel batches, which all downloaded successfully via the same click pattern. The card TEXT DATA above was still captured correctly by reading it directly off each card image in the browser, so cards-data.js is up to date — only the raw PNG files for the Conversation Types folder are missing from local storage (no "Conversation Types" folder exists yet under /Users/office/School-of-Conscious-Communication). Before repeating the download pass, check Chrome's download settings/permissions on the Mac (e.g. "Ask where to save each file" or a blocked multi-download permission prompt for canva.com) — something likely silently blocked the automatic downloads this time.
