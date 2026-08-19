@@ -63,9 +63,30 @@
         .btn-secondary {
             background: rgba(255,255,255,0.1);
         }
-        
+
         .btn-secondary:hover {
             background: rgba(255,255,255,0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn:disabled:hover {
+            background: #667eea;
+            transform: none;
+        }
+
+        /* Inside the white modal-content, the header's dark btn-secondary
+           (near-white on transparent) would be invisible on a white background */
+        .modal-content .btn-secondary {
+            background: #eee;
+            color: #333;
+        }
+
+        .modal-content .btn-secondary:hover {
+            background: #ddd;
         }
         
         /* Filters */
@@ -371,6 +392,58 @@
             margin-bottom: 1rem;
             font-size: 2rem;
         }
+
+        /* View Card modal */
+        .view-card-content {
+            max-width: 700px;
+        }
+
+        .view-card-body {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .view-card-preview {
+            flex-shrink: 0;
+        }
+
+        .view-card-preview .card {
+            width: 260px;
+            height: 260px;
+            cursor: default;
+        }
+
+        .view-card-preview .card:hover {
+            transform: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .view-card-meta {
+            flex: 1;
+            min-width: 220px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.6rem 1rem;
+            align-content: start;
+        }
+
+        .view-card-meta dt {
+            font-weight: 700;
+            color: #777;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+        }
+
+        .view-card-meta dd {
+            color: #222;
+            font-size: 14px;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -388,7 +461,7 @@
     <div class="filters">
         <div class="filter-group">
             <label>Set:</label>
-            <select id="filterSet" onchange="filterCards()">
+            <select id="filterSet" onchange="onSetFilterChange()">
                 <option value="">All Sets</option>
                 <option value="Conversation">Conversation (80)</option>
                 <option value="Values">Value Lens (115)</option>
@@ -397,6 +470,10 @@
                 <option value="Harmony">Harmony Lens (30)</option>
                 <option value="Synergy">Synergy Lens (31)</option>
             </select>
+        </div>
+        <div class="filter-group" id="typeFilterGroup" style="display:none;">
+            <label>Sub-set:</label>
+            <select id="filterType" onchange="filterCards()"></select>
         </div>
         <div class="filter-group">
             <label>Search:</label>
@@ -470,19 +547,47 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- View Card Modal -->
+    <div class="modal" id="viewCardModal">
+        <div class="modal-content view-card-content">
+            <div class="modal-header">
+                <h2>Card Details</h2>
+                <button class="close-btn" onclick="closeViewModal()">&times;</button>
+            </div>
+            <div class="view-card-body">
+                <div class="view-card-preview" id="viewCardPreview"></div>
+                <dl class="view-card-meta" id="viewCardMeta"></dl>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeViewModal()">Close</button>
+                <button class="btn" disabled title="Editing cards from the UI is coming in a future update">&#9998; Edit (coming soon)</button>
+            </div>
+        </div>
+    </div>
+
     <script src="../shared/cards-data.js"></script>
     <script>
         let allCards = [...window.INFLOW_CARDS];
         let filteredCards = [...allCards];
-        
-        function createCard(cardData) {
+
+        const SET_LABELS = {
+            Conversation: 'Conversation',
+            Values: 'Value Lens',
+            Choice: 'Choice Lens',
+            Flow: 'Flow Lens',
+            Harmony: 'Harmony Lens',
+            Synergy: 'Synergy Lens'
+        };
+
+        function createCard(cardData, opts) {
+            opts = opts || {};
             const card = document.createElement('div');
             card.className = 'card';
-            
+
             const isConversationCard = cardData.set === 'Conversation';
             const showId = cardData.id && cardData.id.trim() !== '';
-            
+
             card.innerHTML = `
                 <div class="card-background gradient-${cardData.color}">
                     ${isConversationCard ? '<div class="light-beam beam-top"></div>' : ''}
@@ -499,7 +604,11 @@
                 </div>
                 ${isConversationCard ? '<div class="pole pole-bottom">Attention</div>' : ''}
             `;
-            
+
+            if (!opts.static) {
+                card.addEventListener('click', () => openViewModal(cardData));
+            }
+
             return card;
         }
         
@@ -521,20 +630,80 @@
         
         function filterCards() {
             const setFilter = document.getElementById('filterSet').value;
+            const typeFilter = document.getElementById('filterType').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
+
             filteredCards = allCards.filter(card => {
                 const matchesSet = !setFilter || card.set === setFilter;
-                const matchesSearch = !searchTerm || 
+                const matchesType = !typeFilter || card.type === typeFilter;
+                const matchesSearch = !searchTerm ||
                     card.title.toLowerCase().includes(searchTerm) ||
                     card.description.toLowerCase().includes(searchTerm) ||
                     card.type.toLowerCase().includes(searchTerm);
-                return matchesSet && matchesSearch;
+                return matchesSet && matchesType && matchesSearch;
             });
-            
+
             renderCards();
         }
-        
+
+        // Sub-set (card.type) options depend on the selected Set, since only
+        // some sets currently have more than one distinct sub-set value.
+        function populateTypeFilter() {
+            const setFilter = document.getElementById('filterSet').value;
+            const relevant = setFilter ? allCards.filter(c => c.set === setFilter) : allCards;
+            const types = [...new Set(relevant.map(c => c.type).filter(t => t && t.trim()))].sort();
+
+            const typeSelect = document.getElementById('filterType');
+            const typeGroup = document.getElementById('typeFilterGroup');
+            const previousValue = typeSelect.value;
+
+            typeSelect.innerHTML = '';
+            const allOption = document.createElement('option');
+            allOption.value = '';
+            allOption.textContent = 'All Sub-sets';
+            typeSelect.appendChild(allOption);
+            types.forEach(type => {
+                const opt = document.createElement('option');
+                opt.value = type;
+                opt.textContent = type;
+                typeSelect.appendChild(opt);
+            });
+
+            typeSelect.value = types.includes(previousValue) ? previousValue : '';
+            // Only worth showing when there's an actual choice to make --
+            // several sets currently just repeat their own set name as the
+            // sub-set for every card, which isn't a useful filter.
+            typeGroup.style.display = types.length > 1 ? 'flex' : 'none';
+        }
+
+        function onSetFilterChange() {
+            populateTypeFilter();
+            filterCards();
+        }
+
+        function openViewModal(cardData) {
+            const preview = document.getElementById('viewCardPreview');
+            preview.innerHTML = '';
+            preview.appendChild(createCard(cardData, { static: true }));
+
+            const setLabel = SET_LABELS[cardData.set] || cardData.set;
+            const showId = cardData.id && cardData.id.trim() !== '';
+            document.getElementById('viewCardMeta').innerHTML = `
+                <dt>Title</dt><dd>${cardData.title}</dd>
+                <dt>Set</dt><dd>${setLabel}</dd>
+                <dt>Sub-set</dt><dd>${cardData.type || '—'}</dd>
+                <dt>Color</dt><dd>${cardData.color}</dd>
+                ${showId ? `<dt>ID</dt><dd>${cardData.id}</dd>` : ''}
+                <dt>Description</dt><dd>${cardData.description || '—'}</dd>
+            `;
+
+            document.getElementById('viewCardModal').classList.add('active');
+        }
+
+        function closeViewModal() {
+            document.getElementById('viewCardModal').classList.remove('active');
+        }
+
         function openModal() {
             document.getElementById('cardModal').classList.add('active');
         }
@@ -559,6 +728,7 @@
             };
             
             allCards.push(newCard);
+            populateTypeFilter();
             filterCards();
             closeModal();
         }
@@ -584,15 +754,22 @@
         
         // Close modal on escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Escape') {
+                closeModal();
+                closeViewModal();
+            }
         });
-        
+
         // Close modal on background click
         document.getElementById('cardModal').addEventListener('click', (e) => {
             if (e.target.id === 'cardModal') closeModal();
         });
-        
+        document.getElementById('viewCardModal').addEventListener('click', (e) => {
+            if (e.target.id === 'viewCardModal') closeViewModal();
+        });
+
         // Initial render
+        populateTypeFilter();
         renderCards();
     </script>
 </body>
