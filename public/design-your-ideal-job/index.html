@@ -612,6 +612,59 @@
   @media (min-width:640px){
     .modal{border-radius:20px; max-height:80vh;}
   }
+  @media (min-width:760px){
+    .modal{max-width:960px;}
+  }
+  .modal-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-height:0;
+    overflow:hidden;
+  }
+  @media (min-width:760px){
+    .modal-body{flex-direction:row;}
+  }
+  .modal-preview{
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 18px;
+  }
+  @media (min-width:760px){
+    .modal-preview{
+      width:38%;
+      border-right:1px solid rgba(255,255,255,0.1);
+      padding:22px;
+      overflow-y:auto;
+    }
+  }
+  .modal-preview-card{
+    position:relative;
+    width:100%;
+    max-width:260px;
+    aspect-ratio:1/1;
+    container-type:inline-size;
+    margin:0 auto;
+  }
+  .modal-preview-empty{
+    color:var(--text-dim);
+    font-size:13px;
+    text-align:center;
+    padding:10px 20px;
+  }
+  .modal-selector{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    min-height:0;
+    flex:1;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+  @media (min-width:760px){
+    .modal-selector{border-top:none;}
+  }
   .modal-head{
     display:flex;
     align-items:center;
@@ -830,12 +883,17 @@
         </div>
         <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
       </div>
-      <div class="modal-search">
-        <input type="text" id="modalSearch" placeholder="Search cards by title, type or description…">
-        <div class="modal-chips" id="modalChips"></div>
+      <div class="modal-body">
+        <div class="modal-preview" id="modalPreview"></div>
+        <div class="modal-selector">
+          <div class="modal-search">
+            <input type="text" id="modalSearch" placeholder="Search cards by title, type or description…">
+            <div class="modal-chips" id="modalChips"></div>
+          </div>
+          <button class="btn btn-ghost modal-remove-btn" id="modalRemoveBtn" type="button" style="display:none;">Remove card from this spot</button>
+          <div class="modal-list" id="modalList"></div>
+        </div>
       </div>
-      <button class="btn btn-ghost modal-remove-btn" id="modalRemoveBtn" type="button" style="display:none;">Remove card from this spot</button>
-      <div class="modal-list" id="modalList"></div>
     </div>
   </div>
 
@@ -1143,6 +1201,23 @@
     var modalList = document.getElementById('modalList');
     var modalChips = document.getElementById('modalChips');
     var modalRemoveBtn = document.getElementById('modalRemoveBtn');
+    var modalPreview = document.getElementById('modalPreview');
+
+    // Chromium can synthesize a mouseenter on a row that renders under an
+    // already-stationary cursor (e.g. right where the user just clicked to
+    // open the modal), with no real pointer movement. Ignore mouseenter
+    // for hover-preview until we've seen a genuine mousemove inside the
+    // list, so that phantom event can't clobber the initial preview.
+    var modalMouseMoved = false;
+    modalList.addEventListener('mousemove', function(){ modalMouseMoved = true; });
+
+    function updatePreview(card){
+      if (!card){
+        modalPreview.innerHTML = '<div class="modal-preview-empty">Hover or tap a card in the list to preview its full details here.</div>';
+        return;
+      }
+      modalPreview.innerHTML = '<div class="modal-preview-card">' + miniCardHTML(card, false) + '</div>';
+    }
 
     function buildModalChips(){
       modalChips.innerHTML = '';
@@ -1203,6 +1278,7 @@
             '<div class="pick-meta">'+escapeHTML(card.type||card.set)+(card.id?' · '+escapeHTML(card.id):'')+'</div>' +
           '</div>' +
           (isSelected ? '<div class="pick-check" aria-hidden="true">✓</div>' : '');
+        row.addEventListener('mouseenter', function(){ if (modalMouseMoved) updatePreview(card); });
         row.addEventListener('click', function(){
           if (activeSlotId) placeCard(activeSlotId, card);
           closeModal();
@@ -1214,6 +1290,7 @@
 
     function openModal(slotId){
       activeSlotId = slotId;
+      modalMouseMoved = false;
       var slotEl = document.getElementById('slot-'+slotId);
       var label = slotEl.getAttribute('data-label');
       modalTitle.textContent = 'Choose a card';
@@ -1223,6 +1300,7 @@
       buildModalChips();
       modalRemoveBtn.style.display = placed[slotId] ? 'block' : 'none';
       renderModalList();
+      updatePreview(placed[slotId] || null);
       overlay.classList.add('active');
       var selectedRow = modalList.querySelector('.pick-row.selected');
       if (selectedRow) selectedRow.scrollIntoView({block:'center'});
