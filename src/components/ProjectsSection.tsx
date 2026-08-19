@@ -27,6 +27,12 @@ const projects = [
     color: 'gold' as const,
   },
   {
+    title: 'Design Your Ideal Job',
+    description: "A digital version of the 5 Communication Space Values Map — place Inflow Matrix cards on your Sacred, Group, Personal, Community and 1-on-1 spaces to discover your non-material values.",
+    link: '/design-your-ideal-job/',
+    color: 'gold' as const,
+  },
+  {
     title: 'Knowledge Sharing Community',
     description: 'A platform dedicated to the open exchange of insights, wisdom, and practical knowledge for conscious communicators.',
     link: '#',

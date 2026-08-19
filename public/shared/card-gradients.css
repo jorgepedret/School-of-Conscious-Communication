@@ -1,0 +1,23 @@
+/* Inflow Matrix — shared card gradient palette
+ *
+ * The 13 radial-gradient backgrounds used to render a physical-looking card
+ * for a given color code (see each card's `color` field in cards-data.js).
+ * Shared by /card-renderer/ and /design-your-ideal-job/ so the palette only
+ * needs to be tuned in one place.
+ */
+
+/* Gradients */
+        .gradient-green { background: radial-gradient(ellipse at center, #90EE90 0%, #32CD32 50%, #228B22 100%); }
+        .gradient-pink { background: radial-gradient(ellipse at center, #FFB6C1 0%, #FF69B4 50%, #C71585 100%); }
+        .gradient-gray { background: radial-gradient(ellipse at center, #D3D3D3 0%, #A9A9A9 50%, #696969 100%); }
+        .gradient-blue { background: radial-gradient(ellipse at center, #87CEEB 0%, #4682B4 50%, #4169E1 100%); }
+        .gradient-beige { background: radial-gradient(ellipse at center, #F5F5DC 0%, #D2B48C 50%, #BC987E 100%); }
+        .gradient-purple { background: radial-gradient(ellipse at center, #DDA0DD 0%, #9370DB 50%, #8A2BE2 100%); }
+        .gradient-lightblue { background: radial-gradient(ellipse at center, #B0E0E6 0%, #87CEEB 50%, #5F9EA0 100%); }
+        .gradient-neonblue { background: radial-gradient(ellipse at center, #00CED1 0%, #1E90FF 50%, #0000CD 100%); }
+        .gradient-orange { background: radial-gradient(ellipse at center, #FFD580 0%, #FFA500 50%, #FF8C00 100%); }
+        .gradient-yellow { background: radial-gradient(ellipse at center, #FFFFE0 0%, #FFD700 50%, #FFA500 100%); }
+        .gradient-red { background: radial-gradient(ellipse at center, #FFA07A 0%, #FF6347 50%, #DC143C 100%); }
+        .gradient-darkpink { background: radial-gradient(ellipse at center, #FF69B4 0%, #C71585 50%, #8B008B 100%); }
+        .gradient-palegreen { background: radial-gradient(ellipse at center, #E8F5E8 0%, #C8E6C8 50%, #A8D8A8 100%); }
+        .gradient-metallicblue { background: radial-gradient(ellipse at center, #D0E8F0 0%, #A0C8D8 50%, #7090A8 100%); }

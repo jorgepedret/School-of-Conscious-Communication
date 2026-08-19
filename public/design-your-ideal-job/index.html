@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Design Your Ideal Job — The 5 Communication Space Values Map | Inflow Matrix</title>
+<meta name="description" content="A digital version of Elijah Ignatieff's 5 Communication Space Values Map. Place Inflow Matrix cards on your Sacred, Group, Personal, Community and 1-on-1 spaces to design your ideal job.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/card-gradients.css">
+<style>
+  :root{
+    --ring-group:#ff5f6d;
+    --ring-personal:#6ea8ff;
+    --ring-community:#3ee7a0;
+    --ring-oneonone:#ffd35c;
+    --ring-sacred:#ff9f45;
+    --panel:#0d0b1f;
+    --panel-glass:rgba(15,12,35,0.72);
+    --text:#f4f1ff;
+    --text-dim:rgba(244,241,255,0.65);
+    --accent:#b892ff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    background:#050414;
+    color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    overflow-x:hidden;
+    position:relative;
+  }
+  h1,h2,.display{font-family:'Orbitron',sans-serif;}
+
+  /* ---------- Cosmic background ---------- */
+  #starfield{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .nebula{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 45% at 12% 15%, rgba(255,90,120,0.28), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 88% 20%, rgba(70,130,255,0.26), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 20% 90%, rgba(60,220,170,0.20), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 88%, rgba(255,210,90,0.20), transparent 60%),
+      radial-gradient(ellipse 40% 35% at 50% 50%, rgba(255,150,70,0.28), transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, #050414 100%);
+  }
+
+  /* ---------- App shell ---------- */
+  .app{
+    position:relative;
+    z-index:2;
+    max-width:1400px;
+    margin:0 auto;
+    padding:clamp(10px,2vw,24px) clamp(10px,2vw,24px) 60px;
+  }
+
+  /* ---------- Header ---------- */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    background:linear-gradient(180deg,#ffe066,#ffc233);
+    color:#1a1305;
+    border-radius:14px;
+    padding:10px 18px;
+    box-shadow:0 8px 30px rgba(255,194,51,0.25), inset 0 0 0 2px rgba(0,0,0,0.15);
+    flex-wrap:wrap;
+  }
+  .module-badge{
+    font-family:'Orbitron',sans-serif;
+    font-weight:700;
+    font-size:clamp(11px,1.6vw,15px);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    background:rgba(0,0,0,0.12);
+    padding:6px 14px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .topbar h1{
+    flex:1;
+    text-align:center;
+    font-size:clamp(14px,2.6vw,26px);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin:0;
+    line-height:1.15;
+  }
+  .logo-badge{
+    font-family:'Orbitron',sans-serif;
+    font-weight:700;
+    font-size:clamp(10px,1.4vw,13px);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    text-align:right;
+    opacity:0.85;
+    white-space:nowrap;
+  }
+
+  .subtitle-bar{
+    text-align:center;
+    margin:10px auto 0;
+    max-width:640px;
+    background:var(--panel-glass);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;
+    padding:8px 16px;
+    font-size:clamp(13px,1.8vw,18px);
+    letter-spacing:0.03em;
+    backdrop-filter:blur(6px);
+  }
+
+  .intro-hint{
+    text-align:center;
+    color:var(--text-dim);
+    font-size:13px;
+    margin:10px auto 0;
+    max-width:560px;
+  }
+
+  /* ---------- Controls ---------- */
+  .controls{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    background:var(--panel-glass);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+    padding:14px 16px;
+    backdrop-filter:blur(8px);
+  }
+  .controls-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .controls-label{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--text-dim);
+    margin-right:4px;
+  }
+  .chip{
+    border:1px solid rgba(255,255,255,0.22);
+    background:rgba(255,255,255,0.06);
+    color:var(--text);
+    padding:6px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .15s ease;
+    white-space:nowrap;
+  }
+  .chip:hover{background:rgba(255,255,255,0.14);}
+  .chip.active{
+    background:linear-gradient(135deg,#b892ff,#6ea8ff);
+    border-color:transparent;
+    color:#100a26;
+    box-shadow:0 4px 14px rgba(184,146,255,0.4);
+  }
+  .spacer{flex:1;}
+  .btn{
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:linear-gradient(135deg,#ff9f45,#ff5f6d);
+    color:#1a0a08;
+    box-shadow:0 6px 20px rgba(255,95,109,0.35);
+  }
+  .btn-primary:hover{box-shadow:0 8px 26px rgba(255,95,109,0.5);}
+  .btn-ghost{
+    background:rgba(255,255,255,0.08);
+    color:var(--text);
+    border:1px solid rgba(255,255,255,0.2);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.16);}
+  .card-total{
+    font-size:12px;
+    color:var(--text-dim);
+  }
+
+  /* ---------- Board ---------- */
+  .board-scroll{
+    margin-top:22px;
+    overflow-x:auto;
+    overflow-y:visible;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:4px;
+  }
+  .board{
+    position:relative;
+    width:100%;
+    min-width:640px;
+    max-width:1200px;
+    margin:0 auto;
+    aspect-ratio:1000/800;
+    container-type:inline-size;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 55%);
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 20px 60px rgba(0,0,0,0.55), inset 0 0 80px rgba(80,50,150,0.12);
+  }
+  .pathways-svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+  }
+  .pathways-svg line{
+    stroke:url(#beamGradient);
+    stroke-width:1.6;
+    filter:drop-shadow(0 0 4px rgba(180,160,255,0.55));
+  }
+
+  /* Space slots (5 main spheres) */
+  .space-slot{
+    position:absolute;
+    width:27%;
+    aspect-ratio:1/1;
+    container-type:inline-size;
+    transform:translate(-50%,-50%);
+    z-index:3;
+    border-radius:50%;
+    cursor:pointer;
+    border:none;
+    padding:0;
+    background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05) 40%, rgba(10,8,25,0.9) 100%);
+    box-shadow:0 0 0 3px var(--ring), 0 0 26px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
+    transition:transform .2s ease, box-shadow .2s ease;
+    overflow:hidden;
+  }
+  .space-slot:hover{transform:translate(-50%,-50%) scale(1.035);}
+  .space-slot:focus-visible{outline:3px solid #fff;outline-offset:4px;}
+  .space-slot.filled{background:none;}
+  .space-slot.empty{animation:pulseRing 3.2s ease-in-out infinite;}
+  @keyframes pulseRing{
+    0%,100%{box-shadow:0 0 0 3px var(--ring), 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);}
+    50%{box-shadow:0 0 0 3px var(--ring), 0 0 42px 6px color-mix(in srgb, var(--ring) 55%, transparent), 0 10px 30px rgba(0,0,0,0.5);}
+  }
+  #slot-group{--ring:var(--ring-group); left:25%; top:18%; width:24%;}
+  #slot-personal{--ring:var(--ring-personal); left:75%; top:18%; width:24%;}
+  #slot-community{--ring:var(--ring-community); left:25%; top:70%; width:24%;}
+  #slot-oneonone{--ring:var(--ring-oneonone); left:75%; top:70%; width:24%;}
+  #slot-sacred{--ring:var(--ring-sacred); left:50%; top:44%; width:14%; z-index:4;}
+
+  .slot-label{
+    position:absolute;
+    top:10%;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Orbitron',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    font-size:8.5cqw;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    color:#fff;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    text-align:center;
+    width:82%;
+    line-height:1.08;
+    pointer-events:none;
+  }
+  .slot-plus{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-size:17cqw;
+    color:rgba(255,255,255,0.55);
+    pointer-events:none;
+  }
+
+  /* Goal ovals under each main space */
+  .goal-oval{
+    position:absolute;
+    width:15%;
+    z-index:4;
+    transform:translate(-50%,-50%);
+  }
+  .goal-oval input{
+    width:100%;
+    background:radial-gradient(circle at 35% 30%, #f2f0ff, #b9b3e8 70%, #8b83c9 100%);
+    border:2px solid rgba(255,255,255,0.6);
+    border-radius:999px;
+    color:#221a4a;
+    font-size:9px;
+    font-size:2.1cqw;
+    font-weight:700;
+    text-align:center;
+    padding:6% 4%;
+    outline:none;
+  }
+  .goal-oval input::placeholder{color:#4a3f7a;opacity:0.75;}
+  #goal-group{left:25%; top:33%;}
+  #goal-personal{left:75%; top:33%;}
+  #goal-community{left:25%; top:85%;}
+  #goal-oneonone{left:75%; top:85%;}
+  #goal-sacred{left:50%; top:51.5%; width:13%;}
+  #goal-sacred input{font-size:7px;font-size:1.5cqw;}
+
+  /* Pathway slots (5 value beams) */
+  .pathway-slot{
+    position:absolute;
+    width:9.5%;
+    aspect-ratio:1/1;
+    container-type:inline-size;
+    transform:translate(-50%,-50%);
+    z-index:3;
+    border-radius:50%;
+    cursor:pointer;
+    border:2px dashed rgba(255,255,255,0.55);
+    background:rgba(15,12,35,0.85);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+    font-size:8px;
+    font-size:2.2cqw;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    transition:transform .15s ease, box-shadow .15s ease;
+    overflow:hidden;
+    padding:2%;
+  }
+  .pathway-slot:hover{transform:translate(-50%,-50%) scale(1.08);}
+  .pathway-slot.filled{border-style:solid; border-color:rgba(255,255,255,0.5);}
+  #slot-path-group{left:38.75%; top:32.3%;}
+  #slot-path-personal{left:61.25%; top:32.3%;}
+  #slot-path-community{left:38.75%; top:55.7%;}
+  #slot-path-oneonone{left:61.25%; top:55.7%;}
+  #slot-path-vertical{left:50%; top:57%;}
+
+  /* Date row (sits below the board, normal flow) */
+  .date-row{
+    display:flex;
+    justify-content:center;
+    gap:clamp(16px,4vw,60px);
+    flex-wrap:wrap;
+    margin:18px auto 0;
+    max-width:1200px;
+  }
+  .date-box{
+    text-align:center;
+    width:180px;
+  }
+  .date-box label{
+    display:block;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--text-dim);
+    margin-bottom:5px;
+  }
+  .date-box input{
+    width:100%;
+    background:rgba(0,0,0,0.4);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:8px;
+    color:#fff;
+    font-size:14px;
+    padding:8px 10px;
+    outline:none;
+    color-scheme:dark;
+  }
+
+  /* Mini card rendering (inside slots) */
+  .mini-card{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mini-card .mc-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+  }
+  .mini-card .mc-content{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:86%;
+    text-align:center;
+  }
+  .mini-card .mc-type{
+    font-size:12px;font-size:4.2cqw;
+    font-weight:700;
+    color:#222;
+    background:rgba(255,255,255,0.75);
+    display:inline-block;
+    padding:1px 6px;
+    border-radius:8px;
+    margin-bottom:2%;
+  }
+  .mini-card .mc-title{
+    font-family:Impact,'Arial Black',sans-serif;
+    font-size:26px;font-size:9cqw;
+    color:#000;
+    text-transform:uppercase;
+    line-height:0.95;
+    text-shadow:1px 1px 2px rgba(255,255,255,0.5);
+  }
+  .mini-card.compact .mc-title{font-size:15px;font-size:12.5cqw;}
+  .mini-card .mc-desc{
+    font-size:10px;font-size:3.5cqw;
+    color:#333;
+    background:rgba(255,255,255,0.55);
+    border-radius:6px;
+    padding:2% 4%;
+    margin-top:3%;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .mini-card.compact .mc-desc{display:none;}
+  .mini-card .mc-id{
+    font-size:9px;font-size:3.1cqw;
+    color:#111;
+    background:rgba(255,255,255,0.8);
+    display:inline-block;
+    padding:1px 5px;
+    border-radius:6px;
+    margin-top:2%;
+  }
+  .slot-remove{
+    position:absolute;
+    top:2%;
+    right:2%;
+    width:20px;height:20px;
+    width:6cqw;height:6cqw;
+    min-width:16px;min-height:16px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.65);
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-size:3.2cqw;
+    cursor:pointer;
+    z-index:6;
+  }
+  .slot-remove:hover{background:rgba(220,40,40,0.85);}
+
+  /* ---------- Footer bar ---------- */
+  .footer-bar{
+    margin-top:24px;
+    display:flex;
+    flex-wrap:wrap;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .footer-bar span{
+    flex:1;
+    text-align:center;
+    padding:10px 14px;
+    font-size:clamp(11px,1.6vw,15px);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    white-space:nowrap;
+  }
+  .footer-bar span:nth-child(1){background:#4361ee;color:#fff;}
+  .footer-bar span:nth-child(2){background:#3aafa9;color:#04231f;}
+  .footer-bar span:nth-child(3){background:#ffd166;color:#3a2900;}
+  .footer-bar span:nth-child(4){background:#ef476f;color:#2a0410;flex:1.6;}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(4,3,14,0.82);
+    backdrop-filter:blur(6px);
+    z-index:1000;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .modal-overlay.active{display:flex;}
+  @media (min-width:640px){
+    .modal-overlay{align-items:center;}
+  }
+  .modal{
+    background:linear-gradient(180deg,#171233,#0d0b1f);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:20px 20px 0 0;
+    width:100%;
+    max-width:620px;
+    max-height:88vh;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 -10px 50px rgba(0,0,0,0.6);
+  }
+  @media (min-width:640px){
+    .modal{border-radius:20px; max-height:80vh;}
+  }
+  .modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 18px 10px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .modal-head h2{margin:0;font-size:16px;color:#fff;}
+  .modal-head .slot-tag{font-size:11px;color:var(--text-dim);}
+  .modal-close{
+    background:rgba(255,255,255,0.08);
+    border:none;
+    color:#fff;
+    width:32px;height:32px;
+    border-radius:50%;
+    font-size:18px;
+    cursor:pointer;
+  }
+  .modal-search{
+    padding:12px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .modal-search input{
+    width:100%;
+    padding:10px 14px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.18);
+    background:rgba(0,0,0,0.35);
+    color:#fff;
+    font-size:14px;
+    outline:none;
+  }
+  .modal-chips{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .modal-list{
+    overflow-y:auto;
+    padding:6px 18px 18px;
+    flex:1;
+  }
+  .modal-empty{
+    text-align:center;
+    color:var(--text-dim);
+    padding:30px 10px;
+    font-size:14px;
+  }
+  .pick-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 8px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:background .12s ease;
+  }
+  .pick-row:hover{background:rgba(255,255,255,0.08);}
+  .pick-swatch{
+    width:34px;height:34px;
+    border-radius:50%;
+    flex-shrink:0;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.3);
+  }
+  .pick-text{min-width:0;flex:1;}
+  .pick-title{font-weight:700;font-size:13.5px;color:#fff;}
+  .pick-meta{font-size:11.5px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .modal-remove-btn{
+    margin:0 18px 14px;
+  }
+
+  ::-webkit-scrollbar{width:8px;height:8px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:8px;}
+
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+</style>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="module-badge">Module 1 · Level 1</div>
+      <h1>The 5 Communication Space Values Map</h1>
+      <div class="logo-badge">Planetary Guardians</div>
+    </header>
+
+    <div class="subtitle-bar">Values &amp; 1&nbsp;Year Goals Chart</div>
+    <p class="intro-hint">Design Your Ideal Job — place Inflow Matrix cards on each space and value pathway, just like the physical map. Tap a sphere or a Value node to choose a card, or randomize the whole board.</p>
+
+    <div class="controls">
+      <div class="controls-row" id="subsetRow">
+        <span class="controls-label">Card sets</span>
+        <!-- chips injected by JS -->
+      </div>
+      <div class="controls-row">
+        <button class="btn btn-primary" id="randomizeBtn" type="button">🎲 Randomize All</button>
+        <button class="btn btn-ghost" id="clearBtn" type="button">Clear Map</button>
+        <span class="spacer"></span>
+        <span class="card-total" id="poolCount"></span>
+      </div>
+    </div>
+
+    <div class="board-scroll">
+      <div class="board" id="board">
+        <svg class="pathways-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="beamGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#b892ff"/>
+              <stop offset="100%" stop-color="#6ea8ff"/>
+            </linearGradient>
+          </defs>
+          <line x1="25" y1="18" x2="50" y2="44"></line>
+          <line x1="75" y1="18" x2="50" y2="44"></line>
+          <line x1="25" y1="70" x2="50" y2="44"></line>
+          <line x1="75" y1="70" x2="50" y2="44"></line>
+          <line x1="50" y1="44" x2="50" y2="70"></line>
+        </svg>
+
+        <!-- 5 main spaces -->
+        <button class="space-slot empty" id="slot-group" data-slot="group" data-kind="space" data-label="Group SPACE" aria-label="Group Space — choose a card">
+          <span class="slot-label">Group<br>SPACE</span>
+          <span class="slot-plus">＋</span>
+        </button>
+        <button class="space-slot empty" id="slot-personal" data-slot="personal" data-kind="space" data-label="Personal SPACE" aria-label="Personal Space — choose a card">
+          <span class="slot-label">Personal<br>SPACE</span>
+          <span class="slot-plus">＋</span>
+        </button>
+        <button class="space-slot empty" id="slot-community" data-slot="community" data-kind="space" data-label="Community SPACE" aria-label="Community Space — choose a card">
+          <span class="slot-label">Community<br>SPACE</span>
+          <span class="slot-plus">＋</span>
+        </button>
+        <button class="space-slot empty" id="slot-oneonone" data-slot="oneonone" data-kind="space" data-label="1 on 1 SPACE" aria-label="1 on 1 Space — choose a card">
+          <span class="slot-label">1 on 1<br>SPACE</span>
+          <span class="slot-plus">＋</span>
+        </button>
+        <button class="space-slot empty" id="slot-sacred" data-slot="sacred" data-kind="space" data-label="Sacred SPACE" aria-label="Sacred Space — choose a card">
+          <span class="slot-label">Sacred<br>SPACE</span>
+          <span class="slot-plus">＋</span>
+        </button>
+
+        <!-- 5 pathway (Value) slots -->
+        <button class="pathway-slot" id="slot-path-group" data-slot="path-group" data-kind="pathway" data-label="Value — Group ↔ Sacred" aria-label="Value pathway between Group and Sacred — choose a card">Value</button>
+        <button class="pathway-slot" id="slot-path-personal" data-slot="path-personal" data-kind="pathway" data-label="Value — Personal ↔ Sacred" aria-label="Value pathway between Personal and Sacred — choose a card">Value</button>
+        <button class="pathway-slot" id="slot-path-community" data-slot="path-community" data-kind="pathway" data-label="Value — Community ↔ Sacred" aria-label="Value pathway between Community and Sacred — choose a card">Value</button>
+        <button class="pathway-slot" id="slot-path-oneonone" data-slot="path-oneonone" data-kind="pathway" data-label="Value — 1 on 1 ↔ Sacred" aria-label="Value pathway between 1 on 1 and Sacred — choose a card">Value</button>
+        <button class="pathway-slot" id="slot-path-vertical" data-slot="path-vertical" data-kind="pathway" data-label="Value — Sacred ↔ Timeline" aria-label="Value pathway below Sacred Space — choose a card">Value</button>
+
+        <!-- 1 Year Goal ovals (text, not cards) -->
+        <div class="goal-oval" id="goal-group"><input type="text" placeholder="1 Year Goal" aria-label="Group Space 1 Year Goal"></div>
+        <div class="goal-oval" id="goal-personal"><input type="text" placeholder="1 Year Goal" aria-label="Personal Space 1 Year Goal"></div>
+        <div class="goal-oval" id="goal-community"><input type="text" placeholder="1 Year Goal" aria-label="Community Space 1 Year Goal"></div>
+        <div class="goal-oval" id="goal-oneonone"><input type="text" placeholder="1 Year Goal" aria-label="1 on 1 Space 1 Year Goal"></div>
+        <div class="goal-oval" id="goal-sacred"><input type="text" placeholder="1 Year Goal" aria-label="Sacred Space 1 Year Goal"></div>
+
+      </div>
+    </div>
+
+    <div class="date-row">
+      <div class="date-box" id="date-start">
+        <label for="startDateInput">Start Date</label>
+        <input type="date" id="startDateInput">
+      </div>
+      <div class="date-box" id="date-finish">
+        <label for="finishDateInput">Finish Date</label>
+        <input type="date" id="finishDateInput">
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Level 1</span>
+      <span>Series 1</span>
+      <span>Inflow Matrix Training Program</span>
+      <span>Design Your Ideal Job</span>
+    </div>
+  </div>
+
+  <!-- Card picker modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <h2 id="modalTitle">Choose a card</h2>
+          <div class="slot-tag" id="modalSlotTag"></div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-search">
+        <input type="text" id="modalSearch" placeholder="Search cards by title, type or description…">
+        <div class="modal-chips" id="modalChips"></div>
+      </div>
+      <button class="btn btn-ghost modal-remove-btn" id="modalRemoveBtn" type="button" style="display:none;">Remove card from this spot</button>
+      <div class="modal-list" id="modalList"></div>
+    </div>
+  </div>
+
+  <script src="../shared/cards-data.js"></script>
+  <script>
+  (function(){
+    'use strict';
+
+    /* ---------------- Starfield ---------------- */
+    (function starfield(){
+      var canvas = document.getElementById('starfield');
+      var ctx = canvas.getContext('2d');
+      var stars = [];
+      var W, H;
+      function resize(){
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+        var count = Math.round((W*H)/9000);
+        stars = [];
+        for (var i=0;i<count;i++){
+          stars.push({
+            x: Math.random()*W,
+            y: Math.random()*H,
+            r: Math.random()*1.4+0.2,
+            phase: Math.random()*Math.PI*2,
+            speed: 0.4+Math.random()*0.8
+          });
+        }
+      }
+      function tick(t){
+        ctx.clearRect(0,0,W,H);
+        for (var i=0;i<stars.length;i++){
+          var s = stars[i];
+          var o = 0.35 + 0.65*Math.abs(Math.sin(t*0.0005*s.speed + s.phase));
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+          ctx.fillStyle = 'rgba(255,255,255,'+o.toFixed(3)+')';
+          ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      requestAnimationFrame(tick);
+    })();
+
+    /* ---------------- Data / helpers ---------------- */
+    var ALL_CARDS = (window.INFLOW_CARDS || []).slice();
+    var SET_LABELS = {
+      Conversation: 'Conversation',
+      Values: 'Value Lens',
+      Choice: 'Choice Lens',
+      Flow: 'Flow Lens',
+      Harmony: 'Harmony Lens',
+      Synergy: 'Synergy Lens'
+    };
+    var UNIQUE_SETS = Array.from(new Set(ALL_CARDS.map(function(c){return c.set;}))).sort();
+
+    var SLOTS = [
+      {id:'group', kind:'space'},
+      {id:'personal', kind:'space'},
+      {id:'community', kind:'space'},
+      {id:'oneonone', kind:'space'},
+      {id:'sacred', kind:'space'},
+      {id:'path-group', kind:'pathway'},
+      {id:'path-personal', kind:'pathway'},
+      {id:'path-community', kind:'pathway'},
+      {id:'path-oneonone', kind:'pathway'},
+      {id:'path-vertical', kind:'pathway'}
+    ];
+
+    var STORAGE_KEY = 'inflow-ideal-job-map-v1';
+    var placed = {};
+    var randomizeSets = new Set(UNIQUE_SETS);
+    var pickerSets = new Set(UNIQUE_SETS);
+    var activeSlotId = null;
+
+    function loadState(){
+      try{
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        var data = JSON.parse(raw);
+        if (data.placed) placed = data.placed;
+        if (data.goals){
+          Object.keys(data.goals).forEach(function(k){
+            var el = document.querySelector('#goal-'+k+' input');
+            if (el) el.value = data.goals[k];
+          });
+        }
+        if (data.startDate) document.getElementById('startDateInput').value = data.startDate;
+        if (data.finishDate) document.getElementById('finishDateInput').value = data.finishDate;
+      }catch(e){ /* ignore corrupted state */ }
+    }
+
+    function saveState(){
+      try{
+        var goals = {};
+        ['group','personal','community','oneonone','sacred'].forEach(function(k){
+          var el = document.querySelector('#goal-'+k+' input');
+          goals[k] = el ? el.value : '';
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          placed: placed,
+          goals: goals,
+          startDate: document.getElementById('startDateInput').value,
+          finishDate: document.getElementById('finishDateInput').value
+        }));
+      }catch(e){ /* storage unavailable — app still works, just won't persist */ }
+    }
+
+    function shuffle(arr){
+      var a = arr.slice();
+      for (var i=a.length-1;i>0;i--){
+        var j = Math.floor(Math.random()*(i+1));
+        var tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+      }
+      return a;
+    }
+
+    /* ---------------- Rendering ---------------- */
+    function miniCardHTML(card, compact){
+      var showId = card.id && card.id.trim() !== '';
+      return '' +
+        '<div class="mini-card '+(compact?'compact':'')+'">' +
+          '<div class="mc-inner gradient-'+card.color+'" style="position:absolute;inset:0;"></div>' +
+          '<div class="mc-content">' +
+            (compact ? '' : '<div class="mc-type">'+escapeHTML(card.type||card.set)+'</div>') +
+            '<div class="mc-title">'+escapeHTML(card.title)+'</div>' +
+            (compact ? '' : '<div class="mc-desc">'+escapeHTML(card.description||'')+'</div>') +
+            (showId && !compact ? '<div class="mc-id">'+escapeHTML(card.id)+'</div>' : '') +
+          '</div>' +
+        '</div>';
+    }
+
+    function escapeHTML(str){
+      return String(str==null?'':str).replace(/[&<>"']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    function renderSlot(slotId){
+      var kind = SLOTS.find(function(s){return s.id===slotId;}).kind;
+      var el = document.getElementById('slot-'+slotId);
+      var card = placed[slotId];
+
+      // clear previous mini-card / remove button
+      Array.prototype.slice.call(el.querySelectorAll('.mini-card, .slot-remove')).forEach(function(n){ n.remove(); });
+
+      if (card){
+        el.classList.add('filled');
+        el.classList.remove('empty');
+        el.insertAdjacentHTML('beforeend', miniCardHTML(card, kind==='pathway'));
+        var removeBtn = document.createElement('span');
+        removeBtn.className = 'slot-remove';
+        removeBtn.textContent = '×';
+        removeBtn.setAttribute('role','button');
+        removeBtn.setAttribute('aria-label','Remove card');
+        removeBtn.addEventListener('click', function(evt){
+          evt.stopPropagation();
+          clearSlot(slotId);
+        });
+        el.appendChild(removeBtn);
+      } else {
+        el.classList.remove('filled');
+        el.classList.add('empty');
+      }
+    }
+
+    function renderAllSlots(){
+      SLOTS.forEach(function(s){ renderSlot(s.id); });
+    }
+
+    function clearSlot(slotId){
+      delete placed[slotId];
+      renderSlot(slotId);
+      saveState();
+    }
+
+    function placeCard(slotId, card){
+      placed[slotId] = card;
+      renderSlot(slotId);
+      saveState();
+    }
+
+    /* ---------------- Subset chips (randomize) ---------------- */
+    function buildSubsetChips(){
+      var row = document.getElementById('subsetRow');
+      var allChip = makeChip('All', function(){
+        randomizeSets = new Set(UNIQUE_SETS);
+        refreshSubsetChips();
+      });
+      allChip.dataset.chip = 'all';
+      row.appendChild(allChip);
+      UNIQUE_SETS.forEach(function(setKey){
+        var chip = makeChip(SET_LABELS[setKey] || setKey, function(){
+          if (randomizeSets.has(setKey)){
+            if (randomizeSets.size > 1) randomizeSets.delete(setKey);
+          } else {
+            randomizeSets.add(setKey);
+          }
+          refreshSubsetChips();
+        });
+        chip.dataset.chip = setKey;
+        row.appendChild(chip);
+      });
+      refreshSubsetChips();
+    }
+
+    function makeChip(label, onClick){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.textContent = label;
+      b.addEventListener('click', onClick);
+      return b;
+    }
+
+    function refreshSubsetChips(){
+      var row = document.getElementById('subsetRow');
+      var chips = row.querySelectorAll('.chip');
+      var isAll = randomizeSets.size === UNIQUE_SETS.length;
+      chips.forEach(function(c){
+        if (c.dataset.chip === 'all'){
+          c.classList.toggle('active', isAll);
+        } else {
+          c.classList.toggle('active', randomizeSets.has(c.dataset.chip));
+        }
+      });
+      var pool = ALL_CARDS.filter(function(c){ return randomizeSets.has(c.set); });
+      document.getElementById('poolCount').textContent = pool.length + ' card' + (pool.length===1?'':'s') + ' in selected set' + (randomizeSets.size===1?'':'s');
+    }
+
+    /* ---------------- Randomize / clear all ---------------- */
+    function randomizeAll(){
+      var pool = ALL_CARDS.filter(function(c){ return randomizeSets.has(c.set); });
+      if (pool.length === 0){
+        alert('Select at least one card set to randomize from.');
+        return;
+      }
+      var bag = shuffle(pool);
+      SLOTS.forEach(function(s){
+        if (bag.length === 0) bag = shuffle(pool);
+        placed[s.id] = bag.pop();
+      });
+      renderAllSlots();
+      saveState();
+    }
+
+    function clearAll(){
+      SLOTS.forEach(function(s){ delete placed[s.id]; });
+      renderAllSlots();
+      saveState();
+    }
+
+    /* ---------------- Card picker modal ---------------- */
+    var overlay = document.getElementById('modalOverlay');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalSlotTag = document.getElementById('modalSlotTag');
+    var modalSearch = document.getElementById('modalSearch');
+    var modalList = document.getElementById('modalList');
+    var modalChips = document.getElementById('modalChips');
+    var modalRemoveBtn = document.getElementById('modalRemoveBtn');
+
+    function buildModalChips(){
+      modalChips.innerHTML = '';
+      var allChip = makeChip('All', function(){
+        pickerSets = new Set(UNIQUE_SETS);
+        refreshModalChips();
+        renderModalList();
+      });
+      allChip.dataset.chip = 'all';
+      modalChips.appendChild(allChip);
+      UNIQUE_SETS.forEach(function(setKey){
+        var chip = makeChip(SET_LABELS[setKey] || setKey, function(){
+          if (pickerSets.has(setKey)){
+            if (pickerSets.size > 1) pickerSets.delete(setKey);
+          } else {
+            pickerSets.add(setKey);
+          }
+          refreshModalChips();
+          renderModalList();
+        });
+        chip.dataset.chip = setKey;
+        modalChips.appendChild(chip);
+      });
+      refreshModalChips();
+    }
+
+    function refreshModalChips(){
+      var isAll = pickerSets.size === UNIQUE_SETS.length;
+      Array.prototype.slice.call(modalChips.querySelectorAll('.chip')).forEach(function(c){
+        if (c.dataset.chip === 'all') c.classList.toggle('active', isAll);
+        else c.classList.toggle('active', pickerSets.has(c.dataset.chip));
+      });
+    }
+
+    function renderModalList(){
+      var term = modalSearch.value.trim().toLowerCase();
+      var results = ALL_CARDS.filter(function(c){
+        if (!pickerSets.has(c.set)) return false;
+        if (!term) return true;
+        return (c.title||'').toLowerCase().indexOf(term)>=0 ||
+               (c.description||'').toLowerCase().indexOf(term)>=0 ||
+               (c.type||'').toLowerCase().indexOf(term)>=0;
+      });
+      modalList.innerHTML = '';
+      if (results.length === 0){
+        modalList.innerHTML = '<div class="modal-empty">No cards match. Try a different search or set.</div>';
+        return;
+      }
+      var frag = document.createDocumentFragment();
+      results.forEach(function(card){
+        var row = document.createElement('div');
+        row.className = 'pick-row';
+        row.innerHTML =
+          '<div class="pick-swatch gradient-'+card.color+'"></div>' +
+          '<div class="pick-text">' +
+            '<div class="pick-title">'+escapeHTML(card.title)+'</div>' +
+            '<div class="pick-meta">'+escapeHTML(card.type||card.set)+(card.id?' · '+escapeHTML(card.id):'')+'</div>' +
+          '</div>';
+        row.addEventListener('click', function(){
+          if (activeSlotId) placeCard(activeSlotId, card);
+          closeModal();
+        });
+        frag.appendChild(row);
+      });
+      modalList.appendChild(frag);
+    }
+
+    function openModal(slotId){
+      activeSlotId = slotId;
+      var slotEl = document.getElementById('slot-'+slotId);
+      var label = slotEl.getAttribute('data-label');
+      modalTitle.textContent = 'Choose a card';
+      modalSlotTag.textContent = 'for ' + label;
+      modalSearch.value = '';
+      pickerSets = new Set(UNIQUE_SETS);
+      buildModalChips();
+      modalRemoveBtn.style.display = placed[slotId] ? 'block' : 'none';
+      renderModalList();
+      overlay.classList.add('active');
+      setTimeout(function(){ modalSearch.focus(); }, 50);
+    }
+
+    function closeModal(){
+      overlay.classList.remove('active');
+      activeSlotId = null;
+    }
+
+    modalSearch.addEventListener('input', renderModalList);
+    document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+    modalRemoveBtn.addEventListener('click', function(){
+      if (activeSlotId) clearSlot(activeSlotId);
+      closeModal();
+    });
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+
+    /* ---------------- Wire up slots ---------------- */
+    SLOTS.forEach(function(s){
+      document.getElementById('slot-'+s.id).addEventListener('click', function(){
+        openModal(s.id);
+      });
+    });
+
+    document.getElementById('randomizeBtn').addEventListener('click', randomizeAll);
+    document.getElementById('clearBtn').addEventListener('click', function(){
+      if (confirm('Clear every card from the map?')) clearAll();
+    });
+
+    document.getElementById('startDateInput').addEventListener('change', saveState);
+    document.getElementById('finishDateInput').addEventListener('change', saveState);
+    Array.prototype.slice.call(document.querySelectorAll('.goal-oval input')).forEach(function(inp){
+      inp.addEventListener('change', saveState);
+    });
+
+    /* ---------------- Init ---------------- */
+    buildSubsetChips();
+    loadState();
+    renderAllSlots();
+  })();
+  </script>
+</body>
+</html>
