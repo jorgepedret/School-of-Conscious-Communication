@@ -1210,6 +1210,9 @@
     // list, so that phantom event can't clobber the initial preview.
     var modalMouseMoved = false;
     modalList.addEventListener('mousemove', function(){ modalMouseMoved = true; });
+    modalList.addEventListener('mouseleave', function(){
+      updatePreview((activeSlotId && placed[activeSlotId]) || null);
+    });
 
     function updatePreview(card){
       if (!card){
