@@ -205,6 +205,7 @@
     transition:transform .15s ease, box-shadow .15s ease;
   }
   .btn:active{transform:scale(0.97);}
+  .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
   .btn-primary{
     background:linear-gradient(135deg,#ff9f45,#ff5f6d);
     color:#1a0a08;
@@ -302,6 +303,7 @@
     top:14%;
     left:50%;
     transform:translateX(-50%);
+    z-index:5;
     font-family:'Orbitron',sans-serif;
     font-weight:700;
     font-size:22px;
@@ -314,7 +316,24 @@
     width:82%;
     line-height:1.08;
     pointer-events:none;
+    transition:top .2s ease, font-size .2s ease;
   }
+  .space-slot.filled .slot-label{
+    top:3%;
+    font-size:9px;
+    font-size:3.1cqw;
+    line-height:1.2;
+    color:#fff;
+    text-shadow:none;
+    background:rgba(8,6,20,0.75);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:999px;
+    padding:2% 6%;
+    width:auto;
+    max-width:90%;
+    white-space:nowrap;
+  }
+  .space-slot.filled .slot-label br{display:none;}
   .slot-plus{
     position:absolute;
     inset:0;
@@ -399,31 +418,31 @@
   #slot-path-community{left:38.75%; top:55.7%; --tilt:-38deg;}
   #slot-path-oneonone{left:61.25%; top:55.7%; --tilt:38deg;}
   #slot-path-vertical{left:50%; top:57%; --tilt:90deg;}
+  #slot-path-group.filled, #slot-path-personal.filled, #slot-path-community.filled,
+  #slot-path-oneonone.filled, #slot-path-vertical.filled{ --tilt:0deg; }
 
   /* Date boxes (embedded on the board, flanking the vertical Value beam) */
   .date-box{
     position:absolute;
     z-index:4;
-    width:15.5%;
-    container-type:inline-size;
+    width:23%;
     transform:translate(-50%,-50%);
     text-align:center;
-    background:rgba(20,17,40,0.6);
+    background:rgba(20,17,40,0.72);
     border:1px solid rgba(255,255,255,0.25);
     border-radius:10px;
     padding:8px 10px;
     backdrop-filter:blur(3px);
   }
-  #date-start{left:36%; top:93%;}
-  #date-finish{left:64%; top:93%;}
+  #date-start{left:36%; top:94%;}
+  #date-finish{left:64%; top:94%;}
   .date-box label{
     display:block;
-    font-size:8px;
-    font-size:2.3cqw;
+    font-size:clamp(10px,1.4vw,13px);
     text-transform:uppercase;
     letter-spacing:0.06em;
     color:var(--text-dim);
-    margin-bottom:6%;
+    margin-bottom:4px;
   }
   .date-box input{
     width:100%;
@@ -431,9 +450,8 @@
     border:1px solid rgba(255,255,255,0.25);
     border-radius:6px;
     color:#fff;
-    font-size:9px;
-    font-size:2.6cqw;
-    padding:2.5cqw 2cqw;
+    font-size:clamp(12px,1.6vw,15px);
+    padding:6px 8px;
     outline:none;
     color-scheme:dark;
   }
@@ -442,11 +460,20 @@
   .mini-card{
     position:absolute;
     inset:0;
+    z-index:2;
     border-radius:50%;
     overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
+    transform:scale(1);
+    opacity:1;
+    transition:transform 1s ease, opacity 1s ease;
+  }
+  .mini-card.card-spawn,
+  .mini-card.card-despawn{
+    transform:scale(1.85) translateY(-8%);
+    opacity:0;
   }
   .mini-card .mc-inner{
     position:relative;
@@ -469,6 +496,15 @@
     padding:1px 6px;
     border-radius:8px;
     margin-bottom:2%;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .mini-card.compact .mc-type{
+    font-size:6px;font-size:2.7cqw;
+    padding:0 4%;
+    margin-bottom:3%;
   }
   .mini-card .mc-title{
     font-family:Impact,'Arial Black',sans-serif;
@@ -478,7 +514,7 @@
     line-height:0.95;
     text-shadow:1px 1px 2px rgba(255,255,255,0.5);
   }
-  .mini-card.compact .mc-title{font-size:13px;font-size:9.5cqw;}
+  .mini-card.compact .mc-title{font-size:11px;font-size:8cqw;}
   .mini-card .mc-desc{
     font-size:10px;font-size:3.5cqw;
     color:#333;
@@ -636,6 +672,10 @@
     transition:background .12s ease;
   }
   .pick-row:hover{background:rgba(255,255,255,0.08);}
+  .pick-row.selected{
+    background:rgba(184,146,255,0.16);
+    box-shadow:inset 0 0 0 1px rgba(184,146,255,0.55);
+  }
   .pick-swatch{
     width:34px;height:34px;
     border-radius:50%;
@@ -645,6 +685,12 @@
   .pick-text{min-width:0;flex:1;}
   .pick-title{font-weight:700;font-size:13.5px;color:#fff;}
   .pick-meta{font-size:11.5px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .pick-check{
+    flex-shrink:0;
+    color:#b892ff;
+    font-weight:900;
+    font-size:16px;
+  }
   .modal-remove-btn{
     margin:0 18px 14px;
   }
@@ -679,7 +725,7 @@
         <!-- chips injected by JS -->
       </div>
       <div class="controls-row">
-        <button class="btn btn-primary" id="randomizeBtn" type="button">🎲 Randomize All</button>
+        <button class="btn btn-primary" id="randomizeBtn" type="button">✨ Divinely Randomize All</button>
         <button class="btn btn-ghost" id="clearBtn" type="button">Clear Map</button>
         <span class="spacer"></span>
         <span class="card-total" id="poolCount"></span>
@@ -719,23 +765,23 @@
 
         <!-- 5 main spaces -->
         <button class="space-slot empty" id="slot-group" data-slot="group" data-kind="space" data-label="Group SPACE" aria-label="Group Space — choose a card">
-          <span class="slot-label">Group<br>SPACE</span>
+          <span class="slot-label">Group <br>SPACE</span>
           <span class="slot-plus">＋</span>
         </button>
         <button class="space-slot empty" id="slot-personal" data-slot="personal" data-kind="space" data-label="Personal SPACE" aria-label="Personal Space — choose a card">
-          <span class="slot-label">Personal<br>SPACE</span>
+          <span class="slot-label">Personal <br>SPACE</span>
           <span class="slot-plus">＋</span>
         </button>
         <button class="space-slot empty" id="slot-community" data-slot="community" data-kind="space" data-label="Community SPACE" aria-label="Community Space — choose a card">
-          <span class="slot-label">Community<br>SPACE</span>
+          <span class="slot-label">Community <br>SPACE</span>
           <span class="slot-plus">＋</span>
         </button>
         <button class="space-slot empty" id="slot-oneonone" data-slot="oneonone" data-kind="space" data-label="1 on 1 SPACE" aria-label="1 on 1 Space — choose a card">
-          <span class="slot-label">1 on 1<br>SPACE</span>
+          <span class="slot-label">1 on 1 <br>SPACE</span>
           <span class="slot-plus">＋</span>
         </button>
         <button class="space-slot empty" id="slot-sacred" data-slot="sacred" data-kind="space" data-label="Sacred SPACE" aria-label="Sacred Space — choose a card">
-          <span class="slot-label">Sacred<br>SPACE</span>
+          <span class="slot-label">Sacred <br>SPACE</span>
           <span class="slot-plus">＋</span>
         </button>
 
@@ -916,7 +962,7 @@
         '<div class="mini-card '+(compact?'compact':'')+'">' +
           '<div class="mc-inner gradient-'+card.color+'" style="position:absolute;inset:0;"></div>' +
           '<div class="mc-content">' +
-            (compact ? '' : '<div class="mc-type">'+escapeHTML(card.type||card.set)+'</div>') +
+            '<div class="mc-type">'+escapeHTML(card.type||card.set)+'</div>' +
             '<div class="mc-title">'+escapeHTML(card.title)+'</div>' +
             (compact ? '' : '<div class="mc-desc">'+escapeHTML(card.description||'')+'</div>') +
             (showId && !compact ? '<div class="mc-id">'+escapeHTML(card.id)+'</div>' : '') +
@@ -930,7 +976,7 @@
       });
     }
 
-    function renderSlot(slotId){
+    function renderSlot(slotId, opts){
       var kind = SLOTS.find(function(s){return s.id===slotId;}).kind;
       var el = document.getElementById('slot-'+slotId);
       var card = placed[slotId];
@@ -952,6 +998,12 @@
           clearSlot(slotId);
         });
         el.appendChild(removeBtn);
+        if (opts && opts.spawn){
+          var mc = el.querySelector('.mini-card');
+          mc.classList.add('card-spawn');
+          void mc.offsetWidth; // force reflow so the transition plays
+          mc.classList.remove('card-spawn');
+        }
       } else {
         el.classList.remove('filled');
         el.classList.add('empty');
@@ -960,6 +1012,24 @@
 
     function renderAllSlots(){
       SLOTS.forEach(function(s){ renderSlot(s.id); });
+    }
+
+    /* Remove a card with a shrink-and-fade-out exit, then call done() */
+    function despawnSlot(slotId, done){
+      var el = document.getElementById('slot-'+slotId);
+      var mc = el.querySelector('.mini-card');
+      if (!mc){ done(); return; }
+      mc.classList.add('card-despawn');
+      setTimeout(function(){
+        delete placed[slotId];
+        renderSlot(slotId);
+        done();
+      }, 1000);
+    }
+
+    function setControlsDisabled(disabled){
+      document.getElementById('randomizeBtn').disabled = disabled;
+      document.getElementById('clearBtn').disabled = disabled;
     }
 
     function clearSlot(slotId){
@@ -978,7 +1048,7 @@
     function buildSubsetChips(){
       var row = document.getElementById('subsetRow');
       var allChip = makeChip('All', function(){
-        randomizeSets = new Set(UNIQUE_SETS);
+        randomizeSets = (randomizeSets.size === UNIQUE_SETS.length) ? new Set() : new Set(UNIQUE_SETS);
         refreshSubsetChips();
       });
       allChip.dataset.chip = 'all';
@@ -1023,25 +1093,46 @@
     }
 
     /* ---------------- Randomize / clear all ---------------- */
+    var STAGGER_MS = 500;
+
     function randomizeAll(){
       var pool = ALL_CARDS.filter(function(c){ return randomizeSets.has(c.set); });
       if (pool.length === 0){
         alert('Select at least one card set to randomize from.');
         return;
       }
+      setControlsDisabled(true);
       var bag = shuffle(pool);
-      SLOTS.forEach(function(s){
-        if (bag.length === 0) bag = shuffle(pool);
-        placed[s.id] = bag.pop();
+      var order = shuffle(SLOTS);
+      order.forEach(function(s, i){
+        setTimeout(function(){
+          if (bag.length === 0) bag = shuffle(pool);
+          placed[s.id] = bag.pop();
+          renderSlot(s.id, {spawn:true});
+          if (i === order.length - 1){
+            setTimeout(function(){
+              saveState();
+              setControlsDisabled(false);
+            }, 1000);
+          }
+        }, i * STAGGER_MS);
       });
-      renderAllSlots();
-      saveState();
     }
 
     function clearAll(){
-      SLOTS.forEach(function(s){ delete placed[s.id]; });
-      renderAllSlots();
-      saveState();
+      var filled = SLOTS.filter(function(s){ return placed[s.id]; });
+      if (filled.length === 0) return;
+      setControlsDisabled(true);
+      filled.forEach(function(s, i){
+        setTimeout(function(){
+          despawnSlot(s.id, function(){
+            if (i === filled.length - 1){
+              saveState();
+              setControlsDisabled(false);
+            }
+          });
+        }, i * STAGGER_MS);
+      });
     }
 
     /* ---------------- Card picker modal ---------------- */
@@ -1056,7 +1147,7 @@
     function buildModalChips(){
       modalChips.innerHTML = '';
       var allChip = makeChip('All', function(){
-        pickerSets = new Set(UNIQUE_SETS);
+        pickerSets = (pickerSets.size === UNIQUE_SETS.length) ? new Set() : new Set(UNIQUE_SETS);
         refreshModalChips();
         renderModalList();
       });
@@ -1102,14 +1193,16 @@
       }
       var frag = document.createDocumentFragment();
       results.forEach(function(card){
+        var isSelected = !!(activeSlotId && placed[activeSlotId] === card);
         var row = document.createElement('div');
-        row.className = 'pick-row';
+        row.className = 'pick-row' + (isSelected ? ' selected' : '');
         row.innerHTML =
           '<div class="pick-swatch gradient-'+card.color+'"></div>' +
           '<div class="pick-text">' +
             '<div class="pick-title">'+escapeHTML(card.title)+'</div>' +
             '<div class="pick-meta">'+escapeHTML(card.type||card.set)+(card.id?' · '+escapeHTML(card.id):'')+'</div>' +
-          '</div>';
+          '</div>' +
+          (isSelected ? '<div class="pick-check" aria-hidden="true">✓</div>' : '');
         row.addEventListener('click', function(){
           if (activeSlotId) placeCard(activeSlotId, card);
           closeModal();
@@ -1131,6 +1224,8 @@
       modalRemoveBtn.style.display = placed[slotId] ? 'block' : 'none';
       renderModalList();
       overlay.classList.add('active');
+      var selectedRow = modalList.querySelector('.pick-row.selected');
+      if (selectedRow) selectedRow.scrollIntoView({block:'center'});
       setTimeout(function(){ modalSearch.focus(); }, 50);
     }
 
