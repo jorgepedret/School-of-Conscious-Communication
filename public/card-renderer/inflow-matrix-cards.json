@@ -1,0 +1,465 @@
+{
+  "cards": [
+    {
+      "id": "2.0 3.4.8",
+      "title": "SHOPTALK",
+      "description": "A work context specific conversation required to get an activity done.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.9.5",
+      "title": "VISIONING",
+      "description": "To build and empower a vision in the ether by continually speaking what it is.",
+      "set": "Conversation",
+      "type": "Stewardship Conversation",
+      "color": "darkpink"
+    },
+    {
+      "id": "CK-001",
+      "title": "OVER KILL",
+      "description": "To go overboard either emotionally or with information with something that didn't need it.",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "2.D",
+      "title": "AUTHORITY",
+      "description": "To value the power to enforce laws, exact obedience, command, determine or judge.",
+      "set": "Values",
+      "type": "Value Lens",
+      "color": "palegreen"
+    },
+    {
+      "id": "",
+      "title": "BOUNDARY",
+      "description": "A point or limit that indicates where two things become different.",
+      "set": "Choice",
+      "type": "Choice Lens",
+      "color": "metallicblue"
+    },
+    {
+      "id": "4.B",
+      "title": "CYCLES",
+      "description": "The harmonic relationships between objects in space & time.",
+      "set": "Flow",
+      "type": "Flow Lens",
+      "color": "green"
+    },
+    {
+      "id": "4.A",
+      "title": "REPATTERNING",
+      "description": "A reappraisal of history to create a truer recounting of the events that occured to better understand the present and lead to a more balanced future.",
+      "set": "Harmony",
+      "type": "Harmony Lens",
+      "color": "beige"
+    },
+    {
+      "id": "3.B",
+      "title": "COMMUNICATION",
+      "description": "The subsystem that facilitates the flow of information throughout the system's network.",
+      "set": "Synergy",
+      "type": "Synergy Lens",
+      "color": "palegreen"
+    },
+    {
+      "id": "2.0 3.2.1",
+      "title": "INGESTION",
+      "description": "To discuss the entry of any resource into the system.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.6.4",
+      "title": "CLEARING",
+      "description": "To clear the field of any tension, resentment, or misunderstanding.",
+      "set": "Conversation",
+      "type": "Synergy Conversation",
+      "color": "pink"
+    },
+    {
+      "id": "2.0 3.8.1",
+      "title": "CREDIBILITY",
+      "description": "To build through accomplishments of the past your credibility in the present.",
+      "set": "Conversation",
+      "type": "Marketing Conversation",
+      "color": "red"
+    },
+    {
+      "id": "",
+      "title": "BUTT IN",
+      "description": "To walk into a conversation that is already occurring and to just start talking.",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "",
+      "title": "OVERWHELM",
+      "description": "To give too much information at either a rapid pace or at too high a level (or both).",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "",
+      "title": "FREAK OUT",
+      "description": "To be out of emotional control to such a degree that everything around you become chaotic.",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "2.0 3.1.8",
+      "title": "SYNTHESIS",
+      "description": "To build parts into wholes so they can be understood how they fit into a whole.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.2.8",
+      "title": "SOURCING",
+      "description": "To find the location of a needed resource and methodology and price to acquire it.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.3.5",
+      "title": "INSTRUCTIONAL",
+      "description": "To teach a specific skill in a job or activity.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.4.3",
+      "title": "SCHEDULING",
+      "description": "To get a synchronization between all people involved in some activity or event.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.4.9",
+      "title": "FOLLOW-UP",
+      "description": "When an agreement has been made a follow-up occurs to make sure it occurs.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.6.8",
+      "title": "CONNECTING",
+      "description": "To share your heart space in an intimate way to allow the flow of synergy.",
+      "set": "Conversation",
+      "type": "Synergy Conversation",
+      "color": "pink"
+    },
+    {
+      "id": "2.0 3.7.8",
+      "title": "GUIDANCE",
+      "description": "To assist people towards finding their right path.",
+      "set": "Conversation",
+      "type": "Services Conversation",
+      "color": "orange"
+    },
+    {
+      "id": "2.0 3.9.7",
+      "title": "DELEGATING",
+      "description": "To delegate tasks, missions, and work to specific people for them to complete.",
+      "set": "Conversation",
+      "type": "Stewardship Conversation",
+      "color": "darkpink"
+    },
+    {
+      "id": "2.0 3.1.1",
+      "title": "TESTING",
+      "description": "To have a conversation with a test within it to see how well someone does.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.1.2",
+      "title": "DEBATE",
+      "description": "To argue both sides of a polarity to identify the pros and cons of each side.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.1.3",
+      "title": "INVESTIGATION",
+      "description": "The find out what is required to be uncovered with a set goal in mind.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.1.4",
+      "title": "ANALYSIS",
+      "description": "To break wholes down into parts so they can be examined rigorously.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.1.5",
+      "title": "INTERVIEW",
+      "description": "To spend time with someone and find out about who they are and what they can do.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "",
+      "title": "INTERRUPTION",
+      "description": "To cut someone off in the middle of speaking at an inappropriate time.",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "2.0 3.1.7",
+      "title": "KNOWLEDGE SHARING",
+      "description": "To share knowledge freely in response to some question, problem, field, or issue.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.1.9",
+      "title": "EXPLORATION",
+      "description": "To look into a question or field and discuss it freely without any restraints.",
+      "set": "Conversation",
+      "type": "Research Conversation",
+      "color": "purple"
+    },
+    {
+      "id": "2.0 3.2.2",
+      "title": "PURCHASING",
+      "description": "To identify, select, and purchase the best resource for the required activity.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.2.3",
+      "title": "EXTRUSION",
+      "description": "To discuss the exit of any resource out of a system.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.2.4",
+      "title": "MAINTENANCE",
+      "description": "To take care of a resource and figure out the best way to maintain it.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.2.5",
+      "title": "RELEASING",
+      "description": "The conversation that takes place to change a resource from active to inactive duty.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.2.7",
+      "title": "LOGISTICAL",
+      "description": "The planning, implementation, and coordination of resources for an activity.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.2.9",
+      "title": "SHARING",
+      "description": "To look at how to share a specific resource that is either owned by someone or the group.",
+      "set": "Conversation",
+      "type": "Infrastructure Conversation",
+      "color": "neonblue"
+    },
+    {
+      "id": "2.0 3.3.1",
+      "title": "THEORETICAL",
+      "description": "To discuss the abstract theory of a subject being learned.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.3.2",
+      "title": "REFLECTION",
+      "description": "To reflect on the significance of a resource and/or the meaning of an experience",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.3.3",
+      "title": "MOTIVATIONAL",
+      "description": "To go to the core of what inspires people and get them motivated.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.3.8",
+      "title": "FEEDBACK",
+      "description": "Sharing knowledge of the results of any behavior, considered as influencing or modifying further performance.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.4.1",
+      "title": "PROBLEM SOLVING",
+      "description": "A conversation with the intent to find a solution to a specific problem.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.4.5",
+      "title": "DIRECTIONS",
+      "description": "To give the way to do something in a clear concise manner.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.5.4",
+      "title": "BUILDING",
+      "description": "All the conversations that occur to build a specific product or gift.",
+      "set": "Conversation",
+      "type": "Creativity Conversation",
+      "color": "yellow"
+    },
+    {
+      "id": "2.0 3.7.3",
+      "title": "PREPARATION",
+      "description": "To get everyone ready to deliver the best service possible.",
+      "set": "Conversation",
+      "type": "Services Conversation",
+      "color": "orange"
+    },
+    {
+      "id": "2.0 3.8.2",
+      "title": "NEGOTIATION",
+      "description": "To reach an agreement on what exchange can occur.",
+      "set": "Conversation",
+      "type": "Marketing Conversation",
+      "color": "red"
+    },
+    {
+      "id": "2.0 3.8.7",
+      "title": "ENROLLMENT",
+      "description": "To enroll someone's interest into an idea such they are an active participant.",
+      "set": "Conversation",
+      "type": "Marketing Conversation",
+      "color": "red"
+    },
+    {
+      "id": "2.0 3.8.8",
+      "title": "TEAM FOLLOW-UP",
+      "description": "To make follow-up contact with a prospect with more than one person.",
+      "set": "Conversation",
+      "type": "Marketing Conversation",
+      "color": "red"
+    },
+    {
+      "id": "2.0 3.9.1",
+      "title": "ADVOCATING",
+      "description": "To take a stand for someone regarding a job, mission, or endeavor.",
+      "set": "Conversation",
+      "type": "Stewardship Conversation",
+      "color": "darkpink"
+    },
+    {
+      "id": "2.0 3.9.9",
+      "title": "BLESSING",
+      "description": "To bless all the participants of an endeavor, mission, or accomplishment.",
+      "set": "Conversation",
+      "type": "Stewardship Conversation",
+      "color": "darkpink"
+    },
+    {
+      "id": "",
+      "title": "SOB STORY",
+      "description": "To tell a story that you have told to everyone about some painful experience you had with no intention to heal, only to get sympathy.",
+      "set": "Conversation",
+      "type": "Conversational Killer",
+      "color": "gray"
+    },
+    {
+      "id": "2.0 3.3.4",
+      "title": "EXPLANATION",
+      "description": "To speak in such a way that people understand the situation.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.3.5",
+      "title": "STORYTELLING",
+      "description": "To tell a story and take a listener down a path of understanding the whole through connecting the parts.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.4.2",
+      "title": "REPORTING",
+      "description": "A conversation that gives the results when work has been done or not done.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.4.4",
+      "title": "BRIEFING",
+      "description": "To get the people involved ready for an event or activity.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.4.7",
+      "title": "TIMEOUT",
+      "description": "An immediate stoppage to discuss a new strategy or change in plans.",
+      "set": "Conversation",
+      "type": "Operations Conversation",
+      "color": "green"
+    },
+    {
+      "id": "2.0 3.3.9",
+      "title": "ASSESSMENT",
+      "description": "To assess the level of value in regards to the exchange in an agreement or direction taken.",
+      "set": "Conversation",
+      "type": "Learning Conversation",
+      "color": "lightblue"
+    },
+    {
+      "id": "2.0 3.5.1",
+      "title": "DESIGNING",
+      "description": "All the conversations that occur to design a product or gift.",
+      "set": "Conversation",
+      "type": "Creativity Conversation",
+      "color": "yellow"
+    }
+  ],
+  "metadata": {
+    "totalCards": 57,
+    "exportDate": "2026-01-11T04:15:41.802Z",
+    "version": "1.0"
+  }
+}
