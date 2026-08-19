@@ -824,5 +824,805 @@ window.INFLOW_CARDS = [
                 set: "Choice",
                 type: "Choice Lens",
                 color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "ARTS",
+                description: "The cultural side of society, that which creates and hilights beauty and aesthetics.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "BEAUTIFICATION",
+                description: "The unification of the artists of the community to beautify all aspects of cultural life.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "BIOSPHERE",
+                description: "A biased and manipulated record of past events and times, esp. in connection with the human race.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "COMMUNITY MEDIA",
+                description: "All of the media that is located specific to the community and may include such things as newsletters, posters, walls, newspapers and the word of mouth of the people who live there.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "COMMUNITY",
+                description: "A group viewed as forming a distinct segment of society:",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "CORPORATE MEDIA",
+                description: "The media system that puts the corporate interests of the owners and advertisers above the truth.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "ECONOMICS",
+                description: "The social science that deals with the production, distribution, and consumption of goods and services and with the theory and management of economies or economic systems.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "EDUCATION",
+                description: "The act or process of imparting or acquiring particular knowledge or skills, as for a profession.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "lightblue"
+            },
+            {
+                id: "",
+                title: "EVOLUTION",
+                description: "A process of gradual, peaceful, progressive change or development, as in social or economic structure or institutions.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "GOVERNANCE",
+                description: "A method or system of government or management.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "purple"
+            },
+            {
+                id: "",
+                title: "HEALTH",
+                description: "The overall condition of an organism at a given time.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "HISTORY",
+                description: "The documented way our current civilization interprets our collective past, generally written by the oppressive class.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "ILLUMINATION",
+                description: "The enlightening of society through peaceful and educational ways that gives an alternative to normal politics.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "INDEPENDENT MEDIA",
+                description: "The media that is not owned by a large corporation and has an independent voice and perspective.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "INTERNATIONAL MEDIA",
+                description: "All of the the media that is located outside of the national borders of a specific country.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "JUSTICE",
+                description: "The maintenance or administration of what is just by law, as by judicial or other proceedings.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "LANGUAGE",
+                description: "Any set or system of such symbols as used in a more or less uniform fashion by a number of people, who are thus enabled to communicate intelligibly with one another.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "LAW",
+                description: "Any written or positive rule or collection of rules prescribed under the authority of the state or nation, as by the people in its constitution.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "NATIONAL MEDIA",
+                description: "All of the media of a country that has a national distribution system. This includes the internet based media.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "NOOSPHERE",
+                description: "The biosphere as modified by the activities of the human mind.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "PHILANTHROPY",
+                description: "The effort or inclination to increase the well-being of humankind, as by charitable aid or donations.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "POLITICS",
+                description: "The practice or profession of conducting political affairs.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "PROVINCIAL MEDIA",
+                description: "All of the media that is contained within and covers a specific province (or state).",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "RELIGION",
+                description: "Any specific system of belief, worship, & conduct, often involving a code of ethics and a philosophy.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "SCIENCE",
+                description: "Systematic knowledge of the physical or material world gained through observation and experimentation.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "purple"
+            },
+            {
+                id: "",
+                title: "SPIRITUALITY",
+                description: "All Spiritual activity which drives the human being forward towards some form of development or advance of their present state.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "TECHNOLOGY",
+                description: "The sum of the ways in which social groups provide themselves with the material objects of their civilization.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "UNIFICATION",
+                description: "The acknowledgement and connection between all the communities of the planet into one whole system of fair economic exchange without the corruption of international errorists.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "WORLDVIEW",
+                description: "A collection of beliefs about life and the universe held by an individual or a group.",
+                set: "Harmony",
+                type: "Harmony Lens",
+                color: "beige"
+            },
+            {
+                id: "",
+                title: "MENTORSHIP",
+                description: "The subsystem that connects relationships between individuals and elders to assist individuals on their path.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "MEMORY",
+                description: "The subsystem that organizes the collected EXPERIENCE of all of the EVENTS of the system and its evironment.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "PLANNING",
+                description: "To work out how all the sub-systems will work together to accomplish the system's goals.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "SERVICES",
+                description: "The subsystem that provides the primary services to the system's customers.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "SCOUTING",
+                description: "The subsystem that finds MEANINGFUL & SIGNIFICANT information in relationship to the GOALS of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "INTERPHASING",
+                description: "The subsystem that organizes the attraction of potential customers to the products & services of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "WASTE DISPOSAL",
+                description: "To track, monitor, and transmute any wasted energy back into its original form.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "INFRASTRUCTURE",
+                description: "The subsystem that regulates the system's RESOURCES to balance the needs of the present moment with the future.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "SYNERGY",
+                description: "The subsystem that connects the inner and outer relationships of the system so it acts as a whole system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "HUMAN RESOURCES",
+                description: "The subsystem that takes care of the needs of the business's members.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "lightblue"
+            },
+            {
+                id: "",
+                title: "MOTIVATION",
+                description: "The subsystem that looks after the motivation of the various individuals and groups of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "LEARNING",
+                description: "The subsystem that empowers a system's members to reach their highest potential in the JOB(s) they are responsible for.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "lightblue"
+            },
+            {
+                id: "",
+                title: "FINANCE",
+                description: "The subsystem that regulates the system's MONEY to balance the needs of the present moment with the future.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "ETHICS",
+                description: "The subsystem that makes sure that the system is in alignment with its values.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "MARKETING",
+                description: "The subsystem that organizes the attraction of potential customers to the products & services of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "INTELLIGENCE",
+                description: "The subsystem that analyses MEANINGFUL & SIGNIFICANT information in relationship to the GOALS & VALUES of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "TRANSLATION",
+                description: "The subsystem that translates another language into one's own language or the reverse.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "RESEARCH",
+                description: "The subsystem that investigates FIELDS to discover the POTENTIAL to improve sytem CHOICE, FLOW, SYNERGY & HARMONY.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "purple"
+            },
+            {
+                id: "",
+                title: "OPERATIONS",
+                description: "The subsystem that organizes the system's internal ACTIVITIES.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "OBSERVATION",
+                description: "The subsystem that monitors from multiple PERSPECTIVES & levels what is going on.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "CONFLICT RESOLUTION",
+                description: "The Subsystem that finds a harmonic shared MEANING in relationship to the LAWS of the Universe.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "ADAPTION",
+                description: "The subsystem that sees what changes can be made to adapt to the changing circumstances of the environment.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "MANAGEMENT",
+                description: "The subsystem guiding the whole system towards enhancing shareholder value and upholding contracts.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "STEWARDSHIP",
+                description: "The subsystem guiding the whole system towards the goals, vision, mission and values of the system.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "SECURITY",
+                description: "The applying of the appropriate response to the SIGNIFICANCE of the MOMENT.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "INFO TECH",
+                description: "The sub system that manages the system's information flow.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "CREATIVITY",
+                description: "The Subsystem that formulates a system's PRODUCTS & GIFTS so that the system's purpose, vision, and goals are realized.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "CUSTOMER RELATIONS",
+                description: "The subsystem that connects to the direct needs of the business's customers and satisfies them.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "TRANSFORMATION",
+                description: "The subsystem that assists system's members to transform to a higher level of consciousness.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "AI INTERFACE",
+                description: "To support the inflow between all the sub systems to accomplish the system's goals.",
+                set: "Synergy",
+                type: "Synergy Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "DIRECTION",
+                description: "The way that motion is directed down a specific path.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "REACTIONS",
+                description: "The actions that are brought about in response to events.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "APPROACH",
+                description: "the way you speak to someone for the first time about something, typically with a proposal or request.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "POTENTIAL",
+                description: "What is available in an individual, a moment, an event, a conversation or a cycle to bring into physical existence.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "purple"
+            },
+            {
+                id: "",
+                title: "PERSPECTIVE",
+                description: "A mental view within a context. A way of seeing the world.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "DATA",
+                description: "The numbers produced by measurement of phenomena.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "FIELD",
+                description: "A branch of knowledge or a region of space, that has a center, an axis, and a boundary.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "purple"
+            },
+            {
+                id: "",
+                title: "VALUES",
+                description: "The ideals, customs, institutions, etc., of a  society toward which the people of the group have an affective regard.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "TIMING",
+                description: "The most favourable space & time for an event to occur.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "RELATIONSHIPS",
+                description: "A person or thing produced by or resulting from a process.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "PRODUCT",
+                description: "A person or thing produced by or resulting from a process.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "POSITION",
+                description: "Where you are in space & time.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "FACT",
+                description: "A truth known by actual experience or observation; something known to be true.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "MISSION",
+                description: "The primary purpose and/or a specific thing to be accomplished.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "neonblue"
+            },
+            {
+                id: "",
+                title: "EXPERIENCE",
+                description: "What we extract and learn from the events that occur in our lives. It stores in our memory as the sum total of all we have experienced in our lives.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "EVENT",
+                description: "Something that occurs in a certain place during a particular interval of time.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "CONTEXT",
+                description: "The set of circumstances or facts that surround a particular event, situation, etc.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "BLOCK",
+                description: "Something in the way of a path that stops the flow from occuring.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "AGREEMENT",
+                description: "The act of agreeing or of coming to a mutual arrangement.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "DURATION",
+                description: "The time during which something exists or lasts.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "pink"
+            },
+            {
+                id: "",
+                title: "ALIGNMENT",
+                description: "To be in a natural alignment with the laws of Nature.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "darkpink"
+            },
+            {
+                id: "",
+                title: "SOVEREIGNTY",
+                description: "The authority of a system to govern itself.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "FUNCTION",
+                description: "An activity or purpose natural to or intended for a person.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "lightblue"
+            },
+            {
+                id: "",
+                title: "VALUE",
+                description: "The inherent worth of something that is either relative or absolute, and subjective or objective.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "PATH",
+                description: "A route, course, or track along which something moves.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "orange"
+            },
+            {
+                id: "",
+                title: "RESOURCE",
+                description: "A source of supply, support, or aid, esp. one that can be readily drawn upon when needed.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "STRATEGY",
+                description: "A plan, method, or series of maneuvers or stratagems for obtaining a specific goal or result.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "GOAL",
+                description: "The result or achievement toward  which effort is directed; aim; end.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "FLOW",
+                description: "The natural way of connecting to the flow of the Universal Life force without thinking.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "red"
+            },
+            {
+                id: "",
+                title: "CONVERSATION",
+                description: "The spoken exchange of thoughts, opinions, and feelings; talk.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "CONNECTION",
+                description: "When a bond is between two objects a connection is created where information flows through.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "ACTIVITIES",
+                description: "A use of energy or force; an active movement or operation.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "SIGNIFICANCE",
+                description: "The feeling to take action based upon the mental interpretation of a moment, event, or conversation. One's values have much to do with this interpretation.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "GIFT",
+                description: "The unique contribution that each individual human being has to share with the world and provides a living.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "yellow"
+            },
+            {
+                id: "",
+                title: "ABUNDANCE",
+                description: "A connection to the Universal Life Force where all needs are provided without having to pay for them.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "blue"
+            },
+            {
+                id: "",
+                title: "MOMENT",
+                description: "A specific point in time, especially the present time.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "PULSE",
+                description: "The consistent cyclical repeating of a connection between humans over time.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "PACE",
+                description: "How quickly an event is repeated in time.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "JOB",
+                description: "A post of employment; full-time or part-time position.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "neonblue"
+            },
+            {
+                id: "",
+                title: "MEANING",
+                description: "The feeling derived from the mental interpretation of a moment, event, or conversation. One's values have much to do with this interpretation.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "green"
+            },
+            {
+                id: "",
+                title: "BOND",
+                description: "That which energetically holds something or people together.",
+                set: "Flow",
+                type: "Flow Lens",
+                color: "pink"
             }
         ];
