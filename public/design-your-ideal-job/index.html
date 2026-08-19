@@ -57,6 +57,23 @@
       radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, #050414 100%);
   }
 
+  /* ---------- Home link ---------- */
+  #home-link{
+    display:inline-block;
+    margin-bottom:10px;
+    padding:0.5rem 1rem;
+    background:rgba(13,11,31,0.55);
+    color:var(--text);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+    backdrop-filter:blur(6px);
+    transition:background .2s ease;
+  }
+  #home-link:hover{background:rgba(184,146,255,0.35);}
+
   /* ---------- App shell ---------- */
   .app{
     position:relative;
@@ -234,10 +251,17 @@
     height:100%;
     z-index:1;
   }
-  .pathways-svg line{
+  .pathways-svg .beam-base{
     stroke:url(#beamGradient);
-    stroke-width:1.6;
-    filter:drop-shadow(0 0 4px rgba(180,160,255,0.55));
+    stroke-width:34;
+    stroke-linecap:round;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,0.45));
+  }
+  .pathways-svg .beam-highlight{
+    stroke:url(#beamHighlight);
+    stroke-width:10;
+    stroke-linecap:round;
+    opacity:0.85;
   }
 
   /* Space slots (5 main spheres) */
@@ -250,10 +274,12 @@
     z-index:3;
     border-radius:50%;
     cursor:pointer;
-    border:none;
+    border:4px solid var(--ring);
     padding:0;
-    background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05) 40%, rgba(10,8,25,0.9) 100%);
-    box-shadow:0 0 0 3px var(--ring), 0 0 26px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
+    background:
+      radial-gradient(circle at 32% 26%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 16%, rgba(238,235,247,0.3) 32%, transparent 55%),
+      radial-gradient(circle at 40% 35%, #f7f5fc 0%, #ded8ee 45%, #b7aed1 78%, #9089b3 100%);
+    box-shadow:0 0 16px 2px color-mix(in srgb, var(--ring) 45%, transparent), 0 10px 30px rgba(0,0,0,0.5), inset 0 -6px 18px rgba(40,30,60,0.25);
     transition:transform .2s ease, box-shadow .2s ease;
     overflow:hidden;
   }
@@ -262,8 +288,8 @@
   .space-slot.filled{background:none;}
   .space-slot.empty{animation:pulseRing 3.2s ease-in-out infinite;}
   @keyframes pulseRing{
-    0%,100%{box-shadow:0 0 0 3px var(--ring), 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);}
-    50%{box-shadow:0 0 0 3px var(--ring), 0 0 42px 6px color-mix(in srgb, var(--ring) 55%, transparent), 0 10px 30px rgba(0,0,0,0.5);}
+    0%,100%{box-shadow:0 0 16px 2px color-mix(in srgb, var(--ring) 45%, transparent), 0 10px 30px rgba(0,0,0,0.5), inset 0 -6px 18px rgba(40,30,60,0.25);}
+    50%{box-shadow:0 0 30px 8px color-mix(in srgb, var(--ring) 60%, transparent), 0 10px 30px rgba(0,0,0,0.5), inset 0 -6px 18px rgba(40,30,60,0.25);}
   }
   #slot-group{--ring:var(--ring-group); left:25%; top:18%; width:24%;}
   #slot-personal{--ring:var(--ring-personal); left:75%; top:18%; width:24%;}
@@ -273,17 +299,17 @@
 
   .slot-label{
     position:absolute;
-    top:10%;
+    top:14%;
     left:50%;
     transform:translateX(-50%);
     font-family:'Orbitron',sans-serif;
     font-weight:700;
     font-size:22px;
-    font-size:8.5cqw;
+    font-size:8cqw;
     text-transform:uppercase;
     letter-spacing:0.02em;
-    color:#fff;
-    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    color:#241c40;
+    text-shadow:0 1px 0 rgba(255,255,255,0.4);
     text-align:center;
     width:82%;
     line-height:1.08;
@@ -295,9 +321,10 @@
     display:flex;
     align-items:center;
     justify-content:center;
+    padding-top:14%;
     font-size:40px;
-    font-size:17cqw;
-    color:rgba(255,255,255,0.55);
+    font-size:15cqw;
+    color:rgba(40,30,65,0.28);
     pointer-events:none;
   }
 
@@ -310,88 +337,103 @@
   }
   .goal-oval input{
     width:100%;
-    background:radial-gradient(circle at 35% 30%, #f2f0ff, #b9b3e8 70%, #8b83c9 100%);
-    border:2px solid rgba(255,255,255,0.6);
+    background:radial-gradient(circle at 35% 28%, #8f9fe0 0%, #4a5bb0 55%, #232f66 100%);
+    border:2px solid rgba(255,255,255,0.55);
     border-radius:999px;
-    color:#221a4a;
+    color:#fff;
     font-size:9px;
     font-size:2.1cqw;
     font-weight:700;
     text-align:center;
+    text-shadow:0 1px 2px rgba(0,0,0,0.4);
     padding:6% 4%;
     outline:none;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
   }
-  .goal-oval input::placeholder{color:#4a3f7a;opacity:0.75;}
-  #goal-group{left:25%; top:33%;}
-  #goal-personal{left:75%; top:33%;}
-  #goal-community{left:25%; top:85%;}
-  #goal-oneonone{left:75%; top:85%;}
+  .goal-oval input::placeholder{color:#e2e6ff;opacity:0.8;}
+  #goal-group{left:25%; top:30%;}
+  #goal-personal{left:75%; top:30%;}
+  #goal-community{left:25%; top:82%;}
+  #goal-oneonone{left:75%; top:82%;}
   #goal-sacred{left:50%; top:51.5%; width:13%;}
   #goal-sacred input{font-size:7px;font-size:1.5cqw;}
 
   /* Pathway slots (5 value beams) */
   .pathway-slot{
     position:absolute;
-    width:9.5%;
+    width:11%;
     aspect-ratio:1/1;
     container-type:inline-size;
-    transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%) rotate(var(--tilt,0deg));
     z-index:3;
-    border-radius:50%;
+    border-radius:999px;
     cursor:pointer;
-    border:2px dashed rgba(255,255,255,0.55);
-    background:rgba(15,12,35,0.85);
+    border:1px solid rgba(255,255,255,0.5);
+    background:linear-gradient(180deg,#e3e8bb,#a9b06a);
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:#fff;
+    color:#2c2f13;
     font-weight:700;
     font-size:8px;
     font-size:2.2cqw;
     text-transform:uppercase;
     letter-spacing:0.08em;
-    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 3px 8px rgba(0,0,0,0.4);
+    transition:transform .15s ease, box-shadow .15s ease, border-radius .15s ease;
     overflow:hidden;
-    padding:2%;
+    padding:2cqw;
   }
-  .pathway-slot:hover{transform:translate(-50%,-50%) scale(1.08);}
-  .pathway-slot.filled{border-style:solid; border-color:rgba(255,255,255,0.5);}
-  #slot-path-group{left:38.75%; top:32.3%;}
-  #slot-path-personal{left:61.25%; top:32.3%;}
-  #slot-path-community{left:38.75%; top:55.7%;}
-  #slot-path-oneonone{left:61.25%; top:55.7%;}
-  #slot-path-vertical{left:50%; top:57%;}
+  .pathway-slot:hover{transform:translate(-50%,-50%) rotate(var(--tilt,0deg)) scale(1.08);}
+  .pathway-slot.filled{
+    --tilt:0deg;
+    width:15%;
+    border-radius:50%;
+    border-color:rgba(255,255,255,0.5);
+    background:rgba(15,12,35,0.85);
+    color:#fff;
+  }
+  #slot-path-group{left:38.75%; top:32.3%; --tilt:38deg;}
+  #slot-path-personal{left:61.25%; top:32.3%; --tilt:-38deg;}
+  #slot-path-community{left:38.75%; top:55.7%; --tilt:-38deg;}
+  #slot-path-oneonone{left:61.25%; top:55.7%; --tilt:38deg;}
+  #slot-path-vertical{left:50%; top:57%; --tilt:90deg;}
 
-  /* Date row (sits below the board, normal flow) */
-  .date-row{
-    display:flex;
-    justify-content:center;
-    gap:clamp(16px,4vw,60px);
-    flex-wrap:wrap;
-    margin:18px auto 0;
-    max-width:1200px;
-  }
+  /* Date boxes (embedded on the board, flanking the vertical Value beam) */
   .date-box{
+    position:absolute;
+    z-index:4;
+    width:15.5%;
+    container-type:inline-size;
+    transform:translate(-50%,-50%);
     text-align:center;
-    width:180px;
+    background:rgba(20,17,40,0.6);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:10px;
+    padding:8px 10px;
+    backdrop-filter:blur(3px);
   }
+  #date-start{left:36%; top:93%;}
+  #date-finish{left:64%; top:93%;}
   .date-box label{
     display:block;
-    font-size:11px;
+    font-size:8px;
+    font-size:2.3cqw;
     text-transform:uppercase;
-    letter-spacing:0.08em;
+    letter-spacing:0.06em;
     color:var(--text-dim);
-    margin-bottom:5px;
+    margin-bottom:6%;
   }
   .date-box input{
     width:100%;
     background:rgba(0,0,0,0.4);
     border:1px solid rgba(255,255,255,0.25);
-    border-radius:8px;
+    border-radius:6px;
     color:#fff;
-    font-size:14px;
-    padding:8px 10px;
+    font-size:9px;
+    font-size:2.6cqw;
+    padding:2.5cqw 2cqw;
     outline:none;
     color-scheme:dark;
   }
@@ -436,7 +478,7 @@
     line-height:0.95;
     text-shadow:1px 1px 2px rgba(255,255,255,0.5);
   }
-  .mini-card.compact .mc-title{font-size:15px;font-size:12.5cqw;}
+  .mini-card.compact .mc-title{font-size:13px;font-size:9.5cqw;}
   .mini-card .mc-desc{
     font-size:10px;font-size:3.5cqw;
     color:#333;
@@ -487,6 +529,7 @@
     flex-wrap:wrap;
     border-radius:12px;
     overflow:hidden;
+    background:linear-gradient(90deg,#4361ee 0%,#3aafa9 35%,#8a5cf6 68%,#c74fd1 100%);
     box-shadow:0 8px 24px rgba(0,0,0,0.4);
   }
   .footer-bar span{
@@ -498,11 +541,11 @@
     text-transform:uppercase;
     letter-spacing:0.05em;
     white-space:nowrap;
+    color:#150c2e;
+    border-left:1px solid rgba(0,0,0,0.15);
   }
-  .footer-bar span:nth-child(1){background:#4361ee;color:#fff;}
-  .footer-bar span:nth-child(2){background:#3aafa9;color:#04231f;}
-  .footer-bar span:nth-child(3){background:#ffd166;color:#3a2900;}
-  .footer-bar span:nth-child(4){background:#ef476f;color:#2a0410;flex:1.6;}
+  .footer-bar span:first-child{border-left:none;}
+  .footer-bar span:nth-child(2){flex:1.8;}
 
   /* ---------- Modal ---------- */
   .modal-overlay{
@@ -620,8 +663,9 @@
   <div class="nebula" aria-hidden="true"></div>
 
   <div class="app">
+    <a id="home-link" href="/">&larr; Home</a>
     <header class="topbar">
-      <div class="module-badge">Module 1 · Level 1</div>
+      <div class="module-badge">Module 1</div>
       <h1>The 5 Communication Space Values Map</h1>
       <div class="logo-badge">Planetary Guardians</div>
     </header>
@@ -644,18 +688,33 @@
 
     <div class="board-scroll">
       <div class="board" id="board">
-        <svg class="pathways-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg class="pathways-svg" viewBox="0 0 1000 800" preserveAspectRatio="none">
           <defs>
             <linearGradient id="beamGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#b892ff"/>
-              <stop offset="100%" stop-color="#6ea8ff"/>
+              <stop offset="0%" stop-color="#8f9a5c"/>
+              <stop offset="45%" stop-color="#cbd39a"/>
+              <stop offset="55%" stop-color="#cbd39a"/>
+              <stop offset="100%" stop-color="#7d8a4f"/>
+            </linearGradient>
+            <linearGradient id="beamHighlight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f4f5df"/>
+              <stop offset="100%" stop-color="#e3e8bb"/>
             </linearGradient>
           </defs>
-          <line x1="25" y1="18" x2="50" y2="44"></line>
-          <line x1="75" y1="18" x2="50" y2="44"></line>
-          <line x1="25" y1="70" x2="50" y2="44"></line>
-          <line x1="75" y1="70" x2="50" y2="44"></line>
-          <line x1="50" y1="44" x2="50" y2="70"></line>
+          <g class="beam-base">
+            <line x1="250" y1="144" x2="500" y2="352"></line>
+            <line x1="750" y1="144" x2="500" y2="352"></line>
+            <line x1="250" y1="560" x2="500" y2="352"></line>
+            <line x1="750" y1="560" x2="500" y2="352"></line>
+            <line x1="500" y1="352" x2="500" y2="560"></line>
+          </g>
+          <g class="beam-highlight">
+            <line x1="250" y1="144" x2="500" y2="352"></line>
+            <line x1="750" y1="144" x2="500" y2="352"></line>
+            <line x1="250" y1="560" x2="500" y2="352"></line>
+            <line x1="750" y1="560" x2="500" y2="352"></line>
+            <line x1="500" y1="352" x2="500" y2="560"></line>
+          </g>
         </svg>
 
         <!-- 5 main spaces -->
@@ -694,24 +753,23 @@
         <div class="goal-oval" id="goal-oneonone"><input type="text" placeholder="1 Year Goal" aria-label="1 on 1 Space 1 Year Goal"></div>
         <div class="goal-oval" id="goal-sacred"><input type="text" placeholder="1 Year Goal" aria-label="Sacred Space 1 Year Goal"></div>
 
-      </div>
-    </div>
+        <!-- Start / Finish dates, embedded on the board -->
+        <div class="date-box" id="date-start">
+          <label for="startDateInput">Start Date</label>
+          <input type="date" id="startDateInput">
+        </div>
+        <div class="date-box" id="date-finish">
+          <label for="finishDateInput">Finish Date</label>
+          <input type="date" id="finishDateInput">
+        </div>
 
-    <div class="date-row">
-      <div class="date-box" id="date-start">
-        <label for="startDateInput">Start Date</label>
-        <input type="date" id="startDateInput">
-      </div>
-      <div class="date-box" id="date-finish">
-        <label for="finishDateInput">Finish Date</label>
-        <input type="date" id="finishDateInput">
       </div>
     </div>
 
     <div class="footer-bar">
       <span>Level 1</span>
-      <span>Series 1</span>
       <span>Inflow Matrix Training Program</span>
+      <span>Series 1</span>
       <span>Design Your Ideal Job</span>
     </div>
   </div>

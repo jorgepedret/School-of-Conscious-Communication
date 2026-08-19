@@ -18,9 +18,29 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             overflow: hidden;
         }
+        #home-link {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1000;
+            padding: 0.6rem 1.1rem;
+            background: rgba(0,0,0,0.55);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            transition: background 0.2s;
+        }
+        #home-link:hover {
+            background: rgba(102,126,234,0.85);
+        }
     </style>
 </head>
 <body>
+    <a id="home-link" href="/">&larr; Home</a>
     <div id="root"></div>
     
     <script type="text/babel">
