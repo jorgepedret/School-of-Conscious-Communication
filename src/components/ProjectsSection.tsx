@@ -19,6 +19,7 @@ const projects = [
     description: 'Explore the interconnected patterns of information flow and how they shape our understanding and interactions with others.',
     link: 'https://www.youtube.com/results?search_query=what+is+the+inflow+matrix',
     color: 'indigo' as const,
+    external: true,
   },
   {
     title: 'Synergy Map',

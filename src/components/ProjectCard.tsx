@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -6,6 +6,7 @@ interface ProjectCardProps {
   link: string;
   color: 'violet' | 'indigo' | 'teal' | 'gold' | 'rose';
   index: number;
+  external?: boolean;
 }
 
 const colorClasses = {
@@ -51,29 +52,29 @@ const colorClasses = {
   },
 };
 
-const ProjectCard = ({ title, description, link, color, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, link, color, index, external = false }: ProjectCardProps) => {
   const colors = colorClasses[color];
-  
+  const Icon = external ? ExternalLink : ArrowRight;
+
   return (
     <a
       href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`group relative block p-6 md:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      className={`group relative block p-6 md:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500
         ${colors.bg} ${colors.border} ${colors.hover}
         opacity-0 animate-fade-in`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Gradient corner accent */}
       <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${colors.gradient} rounded-tr-2xl opacity-50`} />
-      
+
       {/* Content */}
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
           <h3 className={`font-serif text-2xl md:text-3xl font-medium ${colors.text}`}>
             {title}
           </h3>
-          <ExternalLink className={`w-5 h-5 ${colors.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1`} />
+          <Icon className={`w-5 h-5 ${colors.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1`} />
         </div>
         
         <p className="text-muted-foreground leading-relaxed">
