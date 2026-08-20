@@ -4,7 +4,46 @@
     Synergy Lens set is now complete (31/31, matches README count)
     Flow Lens set has 42 cards cataloged (README lists no specific target count for this set; treated as complete based on the 44-item Canva folder)
     Conversation set now has 78 cards cataloged (59 pre-existing + 19 new), matching all 73 unique titles in the Canva "Conversation Types" folder (the 73 files include one true duplicate: two differently-ID'd "C-Welcoming3.7.png" files with identical text/design, counted once)
-    still missing: Value Lens (~114), Choice Lens (~52)
-    rest of the cards are in canva
+    Choice Lens set is now complete (91/91, matches README count) — 52 new cards cataloged 2026-08-19
+    Value Lens set is now complete (112/115 unique — 111 new cards cataloged 2026-08-20; matches README's 115-card
+    Canva folder count once you account for 3 exact-duplicate card designs (QUANTITY, INTEGRITY, RESILIENCE each
+    exist as two differently-named files with identical text) counted once, and the pre-existing AUTHORITY entry
+    which was NOT overwritten despite its wording differing from the card's actual printed text — see anomalies.md)
+    ALL SIX CARD SETS ARE NOW FULLY CATALOGED. Nothing left in "rest of the cards are in canva."
 
-    KNOWN ISSUE (2026-08-19): the 73 Conversation Types card IMAGES were clicked through Canva's download flow this session, but none of them actually saved to /Users/office/Downloads on the Mac (verified — folder listing unchanged before/after, and a direct file-existence check for a couple of the expected filenames came back "does not exist"). This is different from the Harmony/Synergy/Flow Wheel batches, which all downloaded successfully via the same click pattern. The card TEXT DATA above was still captured correctly by reading it directly off each card image in the browser, so cards-data.js is up to date — only the raw PNG files for the Conversation Types folder are missing from local storage (no "Conversation Types" folder exists yet under /Users/office/School-of-Conscious-Communication). Before repeating the download pass, check Chrome's download settings/permissions on the Mac (e.g. "Ask where to save each file" or a blocked multi-download permission prompt for canva.com) — something likely silently blocked the automatic downloads this time.
+    See /mnt/user-data (session)/anomalies.md — also delivered to the user as anomalies.md — for a running log of
+    verbatim transcription anomalies (typos/odd wording on the original cards) found while cataloging. These were
+    NOT silently corrected per standing instruction; flagged for the user to review and decide on later.
+
+    RESOLVED (2026-08-19): the original 73-card Conversation Types download pass failed silently (root cause found on retry, NOT a Chrome permissions issue as first guessed) — Canva's "Download" menu item is asynchronous: clicking it shows a brief loading-spinner while the file is generated server-side, and the actual browser download only fires after that. The original automation clicked "Next" immediately after "Download" in the same step, canceling every in-flight download before it completed. Fix: always click "Download" via a fresh element reference (never a reused pixel coordinate — Canva's menu position drifts slightly between renders), then issue a separate explicit wait (~4s) before doing anything else, and verify the file landed on disk before advancing to the next card.
+    All 73 Conversation Types images (74 files counting the confirmed true duplicate C-Welcoming3.7.png) were successfully redownloaded using this fixed pattern and delivered to the Mac as 5 zip parts (CT-p1.zip .. CT-p5.zip) inside /Users/office/School-of-Conscious-Communication/Conversation Types/. THESE STILL NEED TO BE UNZIPPED (into that same folder, then the 5 .zip files deleted) — this session doesn't have shell access to the user's Mac (device_bash unavailable), so unzip must be done manually (double-click each in Finder) or by a future session that has device_bash access.
+
+    All 91 Choice Lens images were downloaded using the same proven pattern (mostly via a subagent that ground through
+    the per-card find->click->wait sequence) and delivered to the Mac as 5 zip parts (CL-p1.zip .. CL-p5.zip) inside
+    /Users/office/School-of-Conscious-Communication/Choice Lenses/. THESE STILL NEED TO BE UNZIPPED, same as above.
+
+    Discovered this session: switching a Canva folder to Grid view renders each thumbnail large enough to read the
+    card's "Definition:" text directly (zoom into the thumbnail), which is much faster for transcription than opening
+    each card's individual preview. Used for Choice Lens; worth using again for Value Lens.
+
+    Also discovered: a Canva folder's single-image preview page (opened by clicking a thumbnail) has a "Next" arrow
+    that pages through every file in the folder without returning to the list view — reusable for the download loop
+    (find "..." -> Download -> wait 4s -> find "Next" -> repeat) without re-navigating each time.
+
+    All 115 Value Lens images were downloaded via subagent using the same proven pattern and delivered to the Mac as
+    9 zip parts (VL-p1.zip .. VL-p9.zip) inside /Users/office/School-of-Conscious-Communication/Values Cards/.
+    THESE STILL NEED TO BE UNZIPPED, same as the Conversation Types and Choice Lenses zips above.
+
+    Discovered this session: a Canva folder's lazy-loaded grid can get "stuck" partway through loading (scrollHeight
+    stops growing well before all items are in the DOM) if you only call window.scrollTo() — this happened on the
+    Values Cards folder, which stalled at 20/39/60/80/100 items across several plateaus. Fix: dispatch a synthetic
+    WheelEvent (`document.body.dispatchEvent(new WheelEvent('wheel', {deltaY: 1200, bubbles: true, cancelable: true}))`)
+    alongside the scrollTo call, as a SINGLE javascript_exec call per scroll step (not a multi-iteration loop in one
+    call — loops longer than ~5-8 short iterations reliably hit the 45s CDP timeout on this folder for unclear
+    reasons). Space consecutive single-step calls a couple seconds apart and re-check scrollHeight/get_page_text
+    between them.
+
+    STATUS: all 6 card sets (Conversation, Harmony, Synergy, Flow, Choice, Values) are now fully cataloged in
+    cards-data.js and all their images have been downloaded and delivered to the Mac as zip parts. The only
+    remaining housekeeping is unzipping all the delivered .zip files (Conversation Types, Choice Lenses, Values
+    Cards) into their respective folders and deleting the zips — see notes above for each set.

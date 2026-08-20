@@ -43,6 +43,894 @@ window.INFLOW_CARDS = [
             },
             {
                 id: "",
+                title: "ADAPTABILITY",
+                description: "To value being able to adjust to new conditions.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "POWER",
+                description: "To value the ability to influence or control people or events.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "QUANTITY",
+                description: "To value the amount or number of something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "EMPOWERMENT",
+                description: "To value giving someone the authority or power to do something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ACHIEVEMENT",
+                description: "to value a thing done successfully with effort, skill, or courage.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ACCURACY",
+                description: "To value the quality or state of being correct or precise.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RIGHTNESS",
+                description: "To value being morally correct or justifiable, as the law prescribed.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INTEGRITY",
+                description: "To value being in alignment with your whole value system.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ACCOUNTABILITY",
+                description: "To value being responsible for  your actions.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ACCEPTANCE",
+                description: "To value the action of consenting to  receive or undertake something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "POISE",
+                description: "To value graceful and elegant bearing in a person.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CREATIVITY",
+                description: "to value the use of imagination or original ideas to create something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "REASON",
+                description: "To value the power of the mind to think, understand, and form judgments logically.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HEALTH",
+                description: "the state of being free from illness or injury.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RESILIENCE",
+                description: "To value the capacity to recover quickly from difficulties.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INNOVATION",
+                description: "To value a new method, idea, or product.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DETACHMENT",
+                description: "To value the state of being objective or aloof.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RELAXATION",
+                description: "To value the state of being free  from tension and anxiety.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INSPIRATION",
+                description: "To value the process of being mentally stimulated to do or feel something creative.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "SUSTAINABILITY",
+                description: "To value the ability to be maintained at a certain rate or level.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HUMILITY",
+                description: "To value a modest or low view of one's own importance.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HONOR",
+                description: "To value high respect or great esteem.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "WISDOM",
+                description: "To value the quality of having experience, knowledge, and good judgment .",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "LEARNING",
+                description: "To value the acquisition of knowledge or skills by study instruction, or experience.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "EXCELLENCE",
+                description: "To value the quality of being outstanding or extremely good.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "FAITH",
+                description: "To value complete trust or confidence in someone or something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "UNDERSTANDING",
+                description: "To value the ability to comprehend.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "TRUTH",
+                description: "To value that which is  in accordance with fact  or reality.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "GENEROSITY",
+                description: "To value the quality of being kind and generous.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PRACTICALITY",
+                description: "To value the quality of being sensible and realistic.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HARMONY",
+                description: "To value the greatest separation and connection between parts.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "EQUANIMITY",
+                description: "To value mental calmness, composure, and evenness of temper.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "GOODNESS",
+                description: "To value the quality of being morally right.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DUTY",
+                description: "To value a moral or legal obligation.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "BOLDNESS",
+                description: "To value being willing to take risks.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "GLAMOUR",
+                description: "To value an attractive or exciting quality.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "BRILLIANCE",
+                description: "To value exceptional talent or intelligence.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PRUDENCE",
+                description: "To value acting with care and thought for the future.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DIVERSITY",
+                description: "To value the state of being diverse.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "WILDNESS",
+                description: "To value the quality of being wild or uncontrolled.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "SIMPLICITY",
+                description: "To value the quality of being easy to understand.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CONCENTRATION",
+                description: "To value the action of focusing all one's attention.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "STEALTH",
+                description: "To value cautious and surreptitious action or movement.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "UNITY",
+                description: "To value the state of being united or joined as a whole.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "KINDNESS",
+                description: "To value the quality of being friendly and considerate.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INITIATIVE",
+                description: "To value the ability to assess and initiate things independently.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PASSION",
+                description: "To value a strong and barely  controllable emotion.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PURITY",
+                description: "To value the absence of contamination.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HOPE",
+                description: "To value a feeling of expectation and desire for a certain thing to happen.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CONSISTENCY",
+                description: "To value conformity in the application of something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "COMMITMENT",
+                description: "To value the state of being dedicated to a cause or activity.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "BRAVENESS",
+                description: "To value courage or courageous behavior.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ENTHUSIASM",
+                description: "To value intense enjoyment, interest, or approval.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "BEAUTY",
+                description: "To value a combination of qualities that pleases the senses.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RUTHLESSNESS",
+                description: "To value having no pity or compassion.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "QUALITY",
+                description: "To value the standard of something as measured against other things.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ORGANIZATION",
+                description: "To value an organized group of people with a particular  purpose.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "LOYALTY",
+                description: "To value a strong feeling of support or allegiance.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "GLOBALIZATION",
+                description: "To value the process by which businesses develop international influence.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DISCOVERY",
+                description: "To value the action of finding something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INTIMACY",
+                description: "To value close familiarity or friendship.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ELOQUENCE",
+                description: "To value fluent or persuasive speaking or writing.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "ORDER",
+                description: "To value the arrangement of things  in a straight or  curved line.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "COMPASSION",
+                description: "To value sympathetic pity and concern for the sufferings of others.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INCLUSION",
+                description: "To value the action of including someone.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "BALANCE",
+                description: "To value an even distribution of weight.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HONESTY",
+                description: "To value the quality of being honest.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "SAFETY",
+                description: "To value the condition of being protected from danger.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "JUSTICE",
+                description: "To value just behavior or treatment.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CLEANLINESS",
+                description: "To value the state of being clean.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INDEPENDENCE",
+                description: "To value freedom from outside control.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "COURAGE",
+                description: "To value the ability to do something that frightens one.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "TRUST",
+                description: "To value firm belief in the reliability of someone or something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "MERCY",
+                description: "To value compassion or forgiveness shown toward someone.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "FREEDOM",
+                description: "To value the power to act, speak, or think as one wants.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "FORGIVENESS",
+                description: "To value the action of forgiving someone.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "AWARENESS",
+                description: "To value knowledge or perception of a situation or fact.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "FOCUS",
+                description: "To value the center of interest or activity.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "IMAGINATION",
+                description: "To value the ability to form new images and sensations.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DIVINITY",
+                description: "To value the state of being divine.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "LOVE",
+                description: "To value an intense feeling of deep affection.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "JOY",
+                description: "To value a feeling of great pleasure and happiness.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "WORSHIP",
+                description: "To value the feeling or expression of reverence and adoration.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "THRIFT",
+                description: "To value the careful management of money arid other resources.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "LIFE",
+                description: "To value the condition that distinguishes animals and plants from inorganic matter.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "GRATITUDE",
+                description: "To value the quality of being grateful or thankfulness.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INTELLIGENCE",
+                description: "To value the ability to acquire and apply knowledge and skills.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "FLEXIBILITY",
+                description: "To value the quality of bending easily without breaking.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RESPECT",
+                description: "To value a feeling of deep admiration for someone or something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "EXPANSION",
+                description: "To value the action of becoming larger or more extensive.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CHARISMA",
+                description: "To value compelling attractiveness or charm.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "TEMPERANCE",
+                description: "To value moderation or self-restraint.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "LEVERAGE",
+                description: "To value the power to influence a situation.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CLARITY",
+                description: "To value the quality of being clear.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "RESPONSIBILITY",
+                description: "To value the state of having a duty to deal with something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PRESSURE",
+                description: "To value the use of persuasion or intimidation.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HABIT",
+                description: "To value a settled or regular tendency or practice.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CONFORMITY",
+                description: "To value compliance with standards or rules.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "TOLERANCE",
+                description: "To value the ability to accept or endure something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PROFIT",
+                description: "To value a financial gain.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "PRIVACY",
+                description: "To value the state of being free from public attention.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "INTEGRATION",
+                description: "To value the action of combining parts into a whole.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "IMITATION",
+                description: "To value the action of imitating someone or something.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HUMOUR",
+                description: "To value the quality of being amusing.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "HAPPINESS",
+                description: "To value the state of being happy.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "COOPERATION",
+                description: "an the action of working together toward a common goal.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "COMPLEXITY",
+                description: "To value being the quality of being intricate and compounded.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "DULLNESS",
+                description: "To value the state of lacking interest or excitement.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CHAOS",
+                description: "To value complete disorder and confusion.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "AUTHENTICITY",
+                description: "To value the quality of being genuine.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
+                title: "CARING",
+                description: "To value looking after something important to you.",
+                set: "Values",
+                type: "Value Lens",
+                color: "palegreen"
+            },
+            {
+                id: "",
                 title: "BOUNDARY",
                 description: "A point or limit that indicates where two things become different.",
                 set: "Choice",
@@ -821,6 +1709,422 @@ window.INFLOW_CARDS = [
                 id: "",
                 title: "WINDOW",
                 description: "A period of time regarded as highly favorable for initiating or completing something.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "REWARD",
+                description: "A satisfying return or result; profit in return for accomplishing something.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "DECISION",
+                description: "The act of reaching a conclusion or making up one's mind in regards to an action.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "SCORE",
+                description: "The record of points or strokes made by the competitors in a game or match.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "JURISDICTION",
+                description: "The extent or range of judicial, law enforcement, or other authority.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "STRUCTURE",
+                description: "Anything composed of parts arranged together in some way; an organization.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "MENTAL MODEL",
+                description: "Is an explanation in someone's cognitive map for how something works.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "HIERARCHY",
+                description: "Any system of persons or things ranked one above another.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "REPETITION",
+                description: "The act of repeating; repeated action, performance, production, or presentation.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PURPOSE",
+                description: "The reason for which something exists or is done, made, used.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PROFIT",
+                description: "The monetary surplus left to a producer or employer after deducting wages, rent, cost of raw materials.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "CENTER",
+                description: "A point, pivot, axis, etc., around which anything rotates or revolves.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "FREE WILL",
+                description: "The doctrine that the conduct of human beings expresses personal choice and is not simply determined by physical or divine forces.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "FEEDBACK",
+                description: "Evaluative information derived from a reaction or response.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PREFERENCE",
+                description: "That which is preferred; one choice over another.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "POSITION",
+                description: "The manner of being placed, disposed, or arranged.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "BUDGET",
+                description: "An itemized allotment of funds, time, etc., for a given period.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PERCEPTION",
+                description: "A single unified awareness derived from sensory processes while a stimulus is present.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "STATUS",
+                description: "The state or condition of affairs.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "EXPRESSION",
+                description: "The indication of feeling, spirit, character, etc.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "INTENTION",
+                description: "An act or instance of determining mentally upon some action or result.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PORTAL",
+                description: "An entrance into another dimension or world.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "MAP",
+                description: "A visual arrange of information so that all the different parts are shown how they relate to one another.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "THOUGHTS",
+                description: "A product of thinking.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "SPECIFICATIONS",
+                description: "A detailed description or assessment of requirements, dimensions, materials, etc.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "IMPACT",
+                description: "The effect or impression of one thing on another.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "DESIRE",
+                description: "A longing or craving, as for something that brings satisfaction or enjoyment.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "CONDITIONS",
+                description: "A circumstance indispensable to some result; prerequisite; that on which something else is contingent.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "SENSES",
+                description: "Any of the faculties, as sight, hearing, smell, taste, or touch, by which humans and animals perceive stimuli originating from outside or inside the body.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "HABIT",
+                description: "An acquired behavior pattern regularly followed until it has become almost involuntary.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "COST",
+                description: "The price paid to acquire, produce, accomplish, or maintain anything.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "NEED",
+                description: ". A condition marked by the lack of something requisite.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "SKILL",
+                description: "The ability, coming from one's knowledge, practice, aptitude, etc., to do something well.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "WANT",
+                description: "To feel a wish for something in the present moment.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "INSIGHTS",
+                description: "The act or outcome of grasping the inward or hidden nature of things or of perceiving in an intuitive manner.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "MESSAGE",
+                description: "A usually short communication transmitted by words, signals, or other means from one person, station, or group to another.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "SWITCH",
+                description: "To turn, shift, or divert.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "INTERPRETATION",
+                description: "A mental representation of the meaning or significance of something.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "EXPECTIONS",
+                description: "The degree of probability that something will occur.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "RELATEDNESS",
+                description: "All real relationships are reducible to the combination of three independent elements standing to one another as affirming, denying, and reconciling influences.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "INNER DIALOGUE",
+                description: "The conversation that goes on inside a person's mind that only they can hear.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "COMPROMISE",
+                description: "Something intermediate between different things.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "VISION",
+                description: "A vivid, imaginative conception or anticipation of something that has yet to be.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "ILLUSION",
+                description: "Something that deceives by producing a false or misleading impression of reality.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "AVAILABILITY",
+                description: "Suitable or ready for use; of use or service; at hand.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "LIMIT",
+                description: "The point, edge, or line beyond which something cannot or may not proceed without a negative consequence.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "RULE",
+                description: "A regulation or bylaw governing procedure or controlling conduct.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "EMOTIONS",
+                description: "An affective state of consciousness in which joy, sorrow, fear, hate, or the like, is experienced, as distinguished from cognitive states of consciousness.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "CONTEXT",
+                description: "The set of circumstances or facts that surround a particular event, situation, etc.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "TERRITORY",
+                description: "A field or sphere of action, thought, domain, or province of something.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "POLARITY",
+                description: "The presence or manifestation of two opposite or contrasting principles or tendencies.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PATTERN",
+                description: "Anything fashioned or designed to serve as a model or guide for something to be made.",
+                set: "Choice",
+                type: "Choice Lens",
+                color: "metallicblue"
+            },
+            {
+                id: "",
+                title: "PRICE",
+                description: "The sum or amount of money or its equivalent for which anything is bought, sold, or offered for sale.",
                 set: "Choice",
                 type: "Choice Lens",
                 color: "metallicblue"
